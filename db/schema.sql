@@ -1,0 +1,3 @@
+DROP DATABASE IF EXISTS iwanna_db;
+CREATE DATABASE iwanna_db
+
