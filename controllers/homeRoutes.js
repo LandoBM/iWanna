@@ -20,15 +20,18 @@ router.get('/', async(req, res) => {
                 }
             ]
         })
+        console.log(prodData)
         const products = prodData.map((product) => product.get({plain: true}))
+        console.log(products)
         res.render('homepage', {
             products,
-            logged_in: req.session.logged_in
+            //logged_in: req.session.logged_in
         })
     } catch (err) {
         res.status(500).json(err)
     }
-})
+// res.render('homepage')
+ })
 
 router.get('/product/:id', withAuth, async(req, res) => {
     try {
