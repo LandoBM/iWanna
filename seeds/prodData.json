@@ -1,0 +1,17 @@
+[
+    {
+        "product_name": "sofa",
+        "condition": "Good",
+        "user_id": 2
+    },
+    {
+        "product_name": "Titans Jersey",
+        "condition": "Mint",
+        "user_id": 1
+    },
+    {
+        "product_name": "Xbox 360",
+        "condition": "Poor",
+        "user_id": 3
+    }
+]
