@@ -59,6 +59,7 @@ router.get('/product/:id', withAuth, async(req, res) => {
             ]
         })
         const product = prodData.get({plain: true})
+        console.log(product)
         res.render('product', {
             ...product,
             logged_in: req.session.logged_in
@@ -77,7 +78,7 @@ router.get('/addproduct', withAuth, async(req, res) => {
             include: [{model: Product, attributes: ['product_id','product_name','condition','date','user_id']}],
         })
 
-        console.log(userData)
+        console.log('USER DATA:', userData)
         const user = userData.get({ plain: true })
         console.log(user)
         res.render('addproduct', {
