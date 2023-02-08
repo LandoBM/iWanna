@@ -1,0 +1,18 @@
+[
+    {
+        "name": "Maci",
+        "email": "maci@aol.com",
+        "password": "foobar124"
+    },
+    {
+        "name": "Bently",
+        "email": "bently@aol.com",
+        "password": "password123"
+    },
+    {
+        "name": "Ryan",
+        "email": "ryan@aol.com",
+        "password": "docker123"
+    }
+
+]
