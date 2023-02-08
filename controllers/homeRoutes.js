@@ -68,6 +68,37 @@ router.get('/product/:id', withAuth, async(req, res) => {
     }
 })
 
+//TESTING 
+
+router.get('/addproduct', withAuth, async(req, res) => {
+    try {
+        const userData = await User.findByPk(req.session.user_id, {
+            attributes: { exclude: ['password']},
+            include: [{model: Product, attributes: ['product_id','product_name','condition','date','user_id']}],
+        })
+
+        console.log(userData)
+        const user = userData.get({ plain: true })
+        console.log(user)
+        res.render('addproduct', {
+            ...user,
+            logged_in: true
+        })
+        //res.render('createpost')
+    } catch(err) {
+        console.log(err)
+        res.status(500).json(err)
+    }
+})
+
+router.get('/login', async(req, res) => {
+    if(req.session.logged_in){
+        res.redirect('/addproduct')
+        return
+    }
+    res.render('login')
+})
+
 
 
 module.exports = router
