@@ -1,0 +1,46 @@
+{{!-- NEW CODE -A --}}
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>iWanna</title>
+    <link rel="stylesheet" href="/public/css/style.css">
+</head>
+
+<body>
+    <div>
+        <header>
+            <h1>iWanna<h3>whatchu you want?</h3>
+            </h1>
+            <nav>
+                {{#if logged_in}}
+                <a href="/">Home</a>
+                <a href="/product">View All Products</a>
+                <button class="no-button" id="logout">logout</button>
+                {{else}}
+                <a href="/login">Login</a>
+                <a href="/">Home</a>
+                <a href="/product">View All Products</a>
+                {{/if}}
+            </nav>
+        </header>
+
+        <main>
+            {{{ body }}}
+        </main>
+
+        <footer>
+
+        </footer>
+
+    </div>
+
+    {{#if logged_in}}
+    <script src="/js/logout.js"></script>
+    {{/if}}
+
+</body>
+
+</html>
