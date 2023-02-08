@@ -59,7 +59,7 @@ router.get('/product/:id', withAuth, async(req, res) => {
             ]
         })
         const product = prodData.get({plain: true})
-        console.log(product)
+        console.log('PRODUCT:',product)
         res.render('product', {
             ...product,
             logged_in: req.session.logged_in
