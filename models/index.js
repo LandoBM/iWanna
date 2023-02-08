@@ -25,3 +25,10 @@ User.hasMany(Comment, {
 Product.hasMany(Comment, {
     foreignKey: 'product_id'
 });
+
+//NEW CODE -A
+module.exports = {
+    User,
+    Product,
+    Comment
+}
