@@ -1,7 +1,14 @@
-
-{{#each products}}
 <h1>Products:</h1>
+{{#if logged_in}}
+{{#each products}}
 <div>
     <h2><a href="/product/{{product_id}}">{{product_name}}</a></h2>
 </div>
 {{/each}}
+{{else}}
+{{#each products}}
+<div>
+    <h2><a href="/login">{{product_name}}</a></h2>
+</div>
+{{/each}}
+{{/if}}
