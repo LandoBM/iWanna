@@ -6,25 +6,25 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>iWanna</title>
-    <link rel="stylesheet" href="/public/css/style.css">
+    <link rel="stylesheet" href="/css/style.css">
 </head>
 
 <body>
     <div>
         <header>
-            <h1>iWanna<h3>whatchu you want?</h3>
-            </h1>
+            <img class="logo" src="/images/iWanna.jpg" width="100" height="100" alt="iWanna Logo">
             <nav>
-                {{#if logged_in}}
-                <a href="/">Home</a>
-                <a href="/product">View All Products</a>
-                <button class="no-button" id="logout">logout</button>
-                {{else}}
-                <a href="/login">Login</a>
-                <a href="/">Home</a>
-                <a href="/product">View All Products</a>
-                {{/if}}
+                <ul class="navbar-links">
+                    <button type="button" id="upBtn">Sign Up!</button>
+                    <li><a href="#" data-replace="Home">Home</a></li>
+                    <li><a href="#" data-replace="Login">Login</a></li>
+                    <li><a href="#" data-replace="Products">Products</a></li>
+                    <li><a href="#" data-replace="Your Listings">Your Listings</a></li>
+                    <li><a href="#" data-replace="Cart">Cart</a></li>
+                </ul>
+                
             </nav>
+            
         </header>
 
         <main>
@@ -44,3 +44,16 @@
 </body>
 
 </html>
+
+
+ {{!-- <nav>
+                {{#if logged_in}}
+                <a href="/">Home</a>
+                <a href="/product">View All Products</a>
+                <button class="no-button" id="logout">logout</button>
+                {{else}}
+                <a href="/login">Login</a>
+                <a href="/">Home</a>
+                <a href="/product">View All Products</a>
+                {{/if}}
+            </nav> --}}

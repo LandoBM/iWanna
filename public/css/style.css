@@ -1,0 +1,80 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    background-color: rgb(235, 254, 235);
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 10%;
+}
+
+.logo {
+    cursor: pointer;
+    border-radius: 50%;
+}
+
+.navbar-links {
+    list-style: none;
+}
+ .navbar-links li {
+    display: inline-block;
+    padding: 0px 20px;
+   
+ }
+ .navbar-links li a{
+    color: darkolivegreen;
+    text-decoration: none;
+    overflow: hidden;
+    position: relative;
+    display: inline-block;
+}
+ .navbar-links li a::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    left: 0;
+    background-color: black;
+    height: 2px;
+    bottom: 0;
+    transform-origin: 100% 50%;
+    transform: scaleX(0);
+    transition: transform .3s cubic-bezier(0.76, 0, 0.24, 1);
+}
+ .navbar-links li a:hover::before{
+    transform-origin: 0% 50%;
+    transform: scaleX(1);
+    position: absolute;
+}
+
+ .navbar-links li a::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    left: 0;
+    content:attr(data-replace);
+    top: 0;
+    transform-origin: 100% 50%;
+    transform: translate3d(200%, 0, 0);
+}
+ 
+ .navbar-links li a:hover::after, a:focus::after{
+   color: black;
+   transform: translate3d(0, 0, 0);
+   position: absolute;
+}
+
+
+#upBtn {
+    padding: 9px 25px;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: all 0.3 ease 0s;
+    color: darkolivegreen;
+    border-color: darkolivegreen;
+    
+
+}
