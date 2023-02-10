@@ -36,9 +36,7 @@ const delBtnHandler = async (event) => {
         })
 
         if (response.ok) {
-            document.location.replace('/addproduct', {
-
-            })
+            document.location.replace('/addproduct')
         } else {
             alert('Failed to delete item')
         }
