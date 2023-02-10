@@ -120,8 +120,9 @@ router.get('/editproduct/:id', withAuth, async (req,res) => {
             ]
         })
         const product = prodData.get({ plain: true })
-        res.render('/addproduct', {
-            ...product,
+        console.log(product)
+        res.render('editproduct', {
+            product,
             logged_in: req.session.logged_in
         })
     } catch (err) {

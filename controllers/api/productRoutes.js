@@ -58,6 +58,27 @@ router.post('/addproduct', withAuth, async (req, res) => {
     }
 })
 
+router.put('/:id', withAuth, async (req, res) => {
+    try{
+        const productInfo = await Product.update({
+            product_name: req.body.product_name,
+            condition: req.body.condition
+        },
+        {
+            where: {
+                product_id: req.params.id
+            }
+        })
+       if(!productInfo){
+        res.status(404).json({ message: 'No item found'})
+        return
+       }
+       res.status(200).json(productInfo)
+    } catch (err) {
+        res.status(500).json(err)
+    }
+})
+
 // router.post('/', async(req, res) => {
 //     try {
 //         const newProd = await Product.create({
