@@ -1,0 +1,19 @@
+<h1>Item number {{product_id}}</h1>
+
+{{#if logged_in}}
+{{!-- {{#each product}} --}}
+<div>
+<h2>{{product_name}}</h2>
+<h2>added by: {{user.name}} on {{date}}</h2>
+<h2>codition: {{condition}}</h2>
+<h2>
+    {{#each comments}}
+    <p>
+       comment: {{comment}}
+    </p>  
+    {{/each}}
+    </h2>
+<div class="update-prod"><a href="/editproduct/{{product_id}}"><button class="btn btn-sm btn-danger" data-id="{{product_id}}">UPDATE</button></a></div>
+</div>
+{{!-- {{/each}} --}}
+{{/if}}
