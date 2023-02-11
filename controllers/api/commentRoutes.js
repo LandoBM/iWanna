@@ -13,18 +13,38 @@ router.post('/', withAuth, async (req, res) => {
         res.status(404).json(err)
     }
 })
+
+// router.delete('/:id', withAuth, async (req,res) => {
+//     try{
+//         const commentData = await Product.destroy({
+//             where: {
+//                 id: req.params.id,
+//                 user_id: req.session.user_id
+//             }
+//         })
+//         if(!commentData) {
+//             res.status(404).json({message: `There is no comment related to this id!`})
+//             return
+//         }
+//     } catch(err) {
+//         res.status(404).json()
+//     }
+// })
+
 router.delete('/:id', withAuth, async (req,res) => {
+    console.log('-------REQ.PARAMS', req.params.id)
     try{
-        const commentData = await Product.destroy({
+        const commentData = await Comment.destroy({
             where: {
-                id: req.params.id,
-                user_id: req.session.user_id
+                comment_id: req.params.id,
+                //user_id: req.session.user_test
             }
         })
         if(!commentData) {
-            res.status(404).json({message: `There is no comment related to this id!`})
+            res.status(404).json({message: `There is no product related to this id!`})
             return
         }
+        res.status(200).json(commentData)
     } catch(err) {
         res.status(404).json()
     }
