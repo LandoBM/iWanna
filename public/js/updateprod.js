@@ -1,14 +1,15 @@
 const updateBtnHandler = async (event) => {
-    let prodName = document.querySelector('.p-name').value
-    let prodCond = document.querySelector('.p-cond').value
+    let product_name = document.querySelector('.p-name').value
+    let condition = document.querySelector('.p-cond').value
     if(event.target.hasAttribute('data-id')) {
-      const id = event.target.getAttribute('data-id')
+      const id = document.querySelector('.btn').getAttribute('data-id')
+      //const id = event.target.getAttribute('data-id')
 
       const response = await fetch(`/api/product/${id}`,{
         method:'PUT',
         body: JSON.stringify({
-          prodName,
-          prodCond
+          product_name,
+          condition
         }),
         headers: {
           'Content-Type': 'application/json'
@@ -23,5 +24,5 @@ const updateBtnHandler = async (event) => {
   }
 
   document
-  .querySelector('.update-prod')
-  .addEventListener('click', updateBtnHandler)
+  .querySelector('.updateComments')
+  .addEventListener('submit', updateBtnHandler)
