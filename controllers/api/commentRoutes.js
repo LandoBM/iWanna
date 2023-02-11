@@ -6,11 +6,31 @@ const withAuth = require('../../utils/auth')
 router.post('/', withAuth, async (req, res) => {
     try{
         console.log('PRODUCT_ID', req.params.id)
+        console.log('PRODUCT_ID', req.query.id)
         const commentInfo = await Comment.create({
             ...req.body,
             user_id: req.session.user_test,
             product_id: req.params.id
         })
+        console.log('PRODUCT_ID', req.params.id)
+        console.log('PRODUCT_ID', req.query.id)
+        res.status(200).json(commentInfo)
+    }catch (err){
+        res.status(404).json(err)
+    }
+})
+
+router.post('/:id', withAuth, async (req, res) => {
+    try{
+        console.log('PRODUCT_ID', req.params.id)
+        console.log('PRODUCT_ID', req.query.id)
+        const commentInfo = await Comment.create({
+            ...req.body,
+            user_id: req.session.user_test,
+            product_id: req.params.id
+        })
+        console.log('PRODUCT_ID', req.params.id)
+        console.log('PRODUCT_ID', req.query.id)
         res.status(200).json(commentInfo)
     }catch (err){
         res.status(404).json(err)
