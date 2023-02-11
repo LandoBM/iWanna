@@ -1,0 +1,31 @@
+<h1>Item number {{product_id}}</h1>
+
+{{#if logged_in}}
+  {{!-- {{#each product}} --}}
+  <div>
+    <h2>{{product_name}}</h2>
+    <h2>added by: {{user.name}} on {{date}}</h2>
+    <h2>codition: {{condition}}</h2>
+    <h2>
+      {{#each comments}}
+        <p>
+          comment:{{comment}}
+        </p>
+        <a href="/deletecom/{{comment}}"><button class="btn btn-sm" data-id="{{comment_id}}">DELETE</button></a>
+        {{!-- <a href="/deletecom/{{comment}}"><button class="btn btn-sm" data-id="{{comment_id}}">ADD</button></a> --}}
+      {{/each}}
+    </h2>
+    {{!-- <div class="update-prod"><a href="/editproduct/{{product_id}}"><button class="btn btn-sm btn-danger" data-id="{{product_id}}">UPDATE</button></a></div> --}}
+    {{!-- <div class="edit-comment"><a href="/editcomment/{{id}}"><button class="btn btn-sm btn-danger" data-id="{{id}}">EDIT COMMENT</button></a></div> --}}
+    <div class="input-group mb-3">
+        <a href="/deletecom/{{comments}}"><button class="btn btn-outline-secondary" type="button" id="button-addon1" data-id="{{comments.comment_id}}">Add Comment</button></a>
+        <input type="text" class="form-control" placeholder="" aria-label="Example text with button addon" aria-describedby="button-addon1">
+    </div>
+    <div class=""><a href="/editproduct/{{product_id}}"><button
+          class="btn btn-sm btn-danger"
+          data-id="{{product_id}}"
+        >UPDATE</button></a>
+    </div>
+  </div>
+  {{!-- {{/each}} --}}
+{{/if}}
