@@ -5,10 +5,13 @@ const { Comment } = require('../../models');
 const withAuth = require('../../utils/auth')
 router.post('/', withAuth, async (req, res) => {
     try{
-        const commentInfo = await Comment.create(req.body)
-        req.session.save(()=> {
-            req.session.user_id = userInfo.user_id
+        console.log('PRODUCT_ID', req.params.id)
+        const commentInfo = await Comment.create({
+            ...req.body,
+            user_id: req.session.user_test,
+            product_id: req.params.id
         })
+        res.status(200).json(commentInfo)
     }catch (err){
         res.status(404).json(err)
     }
