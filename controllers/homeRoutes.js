@@ -85,37 +85,66 @@ router.get("/product/:id", withAuth, async (req, res) => {
 
 //TESTING
 
-router.get("/addproduct", withAuth, async (req, res) => {
-  try {
-    const userData = await User.findByPk(req.session.user_id, {
-      attributes: { exclude: ["password"] },
-      include: [
-        {
-          model: Product,
-          attributes: [
-            "product_id",
-            "product_name",
-            "condition",
-            "date",
-            "user_id",
-          ],
-        },
-      ],
-    });
 
-    //console.log('USER DATA:', userData)
-    const user = userData.get({ plain: true });
-    //console.log(user)
-    res.render("addproduct", {
-      ...user,
-      logged_in: true,
-    });
-    //res.render('createpost')
-  } catch (err) {
-    console.log(err);
-    res.status(500).json(err);
-  }
-});
+router.get('/comment/:id', withAuth, async(req, res) => {
+    try {
+        const commentData = await Comment.findByPk(req.params.id,{
+            attributes: [
+                'comment_id',
+                'user_id',
+                'product_id',
+                'comment'
+            ],
+            include: [
+                // User,
+                // {
+                //     model: Comment,
+                //     include: [User]
+                // }
+                {
+                    model: User,
+                    attributes: ['id', 'name', 'email']
+                },
+                {
+                    model: Product,
+                    attributes: ['product_id', 'product_name', 'condition', 'date', 'user_id'],
+                    include: {
+                        model: User,
+                        attributes: ['id', 'name', 'email'],
+                        model: Comment,
+                        attributes: ['comment_id','user_id','product_id','comment']
+                    }
+                }
+            ]
+        })
+        //const product = prodData.map((product) => product.get({plain: true}))
+        const comment = commentData.get({plain: true})
+        console.log('COMMENT:',comment)
+        res.render('/', {
+            ...comment,
+            logged_in: req.session.logged_in
+        })
+    } catch (err) {
+        res.status(500).json(err)
+    }
+})
+
+
+// //TESTING 
+
+//     //console.log('USER DATA:', userData)
+//     const user = userData.get({ plain: true });
+//     //console.log(user)
+//     res.render("addproduct", {
+//       ...user,
+//       logged_in: true,
+//     });
+//     //res.render('createpost')
+//   } catch (err) {
+//     console.log(err);
+//     res.status(500).json(err);
+//   }
+// });
 
 router.get("/editproduct/:id", withAuth, async (req, res) => {
   try {
@@ -153,51 +182,51 @@ router.get("/editproduct/:id", withAuth, async (req, res) => {
   }
 });
 
-router.get("/deletecom/:id", withAuth, async (req, res) => {
-  try {
-    const commentData = await Comment.findByPk(req.params.id, {
-      attributes: ["comment_id", "user_id", "product_id", "comment"],
-    //   include: [
-    //     {
-    //         model: Product,
-    //         attributes: [
-    //           "product_id",
-    //           "product_name",
-    //           "condition",
-    //           "date",
-    //           "user_id",
-    //         ],
-    //     },
-    //     {
-    //         include: [
-    //         {
-    //             model: User,
-    //             attributes: ["id", "name", "email"],
-    //         },
-    //         {
-    //         model: Product,
-    //         attributes: [
-    //           "product_id",
-    //           "product_name",
-    //           "condition",
-    //           "date",
-    //           "user_id",
-    //         ]},
-    //     ],
-    //     }
-    //   ],
-    });
-    // const products = prodData.map((products) => products.get({ plain: true }));
-    const comments = commentData.map((comments) => comments.get({ plain: true }));
-    console.log(comments);
-    res.redirect("/product", {
-      comments,
-      logged_in: req.session.logged_in,
-    });
-  } catch (err) {
-    res.status(404).json(err);
-  }
-});
+// router.get("/deletecom/:id", withAuth, async (req, res) => {
+//   try {
+//     const commentData = await Comment.findByPk(req.params.id, {
+//       attributes: ["comment_id", "user_id", "product_id", "comment"],
+//     //   include: [
+//     //     {
+//     //         model: Product,
+//     //         attributes: [
+//     //           "product_id",
+//     //           "product_name",
+//     //           "condition",
+//     //           "date",
+//     //           "user_id",
+//     //         ],
+//     //     },
+//     //     {
+//     //         include: [
+//     //         {
+//     //             model: User,
+//     //             attributes: ["id", "name", "email"],
+//     //         },
+//     //         {
+//     //         model: Product,
+//     //         attributes: [
+//     //           "product_id",
+//     //           "product_name",
+//     //           "condition",
+//     //           "date",
+//     //           "user_id",
+//     //         ]},
+//     //     ],
+//     //     }
+//     //   ],
+//     });
+//     // const products = prodData.map((products) => products.get({ plain: true }));
+//     const comments = commentData.map((comments) => comments.get({ plain: true }));
+//     console.log(comments);
+//     res.redirect("/product", {
+//       comments,
+//       logged_in: req.session.logged_in,
+//     });
+//   } catch (err) {
+//     res.status(404).json(err);
+//   }
+// });
 
 router.get("/login", async (req, res) => {
   if (req.session.logged_in) {
