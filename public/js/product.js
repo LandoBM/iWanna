@@ -3,14 +3,15 @@ const newFormHandler = async (event) => {
 
     const product_name = document.querySelector('#prodName').value.trim()
     const condition = document.querySelector('#prodCond').value.trim()
+    const price = document.querySelector('#prodPrice').value.trim()
 
     console.log('--------PRODNAME', product_name)
     console.log('--------CONDITION', condition)
 
-    if(product_name && condition){
+    if(product_name && condition && price){
         const response = await fetch(`/api/product`, {
             method: 'POST',
-            body: JSON.stringify ({product_name, condition}),
+            body: JSON.stringify ({product_name, condition, price}),
             headers: {
                 'Content-Type': 'application/json',
             }

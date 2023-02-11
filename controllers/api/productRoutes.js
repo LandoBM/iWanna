@@ -1,11 +1,38 @@
 const router = require('express').Router();
 const { Product } = require('../../models');
+const multer  = require('multer')
+const upload = multer({ dest: '../../images' })
 
-//TESTING 
+//keep
+// const withAuth = require('../../utils/auth')
+// router.post('/', async (req, res) => {
+//     try{
+//         console.log(req.body)
+//         console.log(req.session.user_id)
+//         const productInfo = await Product.create({
+//             ...req.body,
+//             user_id: req.session.user_test,
+
+//         //     //product_id: req.session.user_id
+//         //     // return res.status(201).json({
+//         //     //     productInfo,
+//         //     // });
+//         })
+//         console.log('PRODUCT INFO ---------', productInfo)
+//         // req.session.save(() => {
+//         //     req.session.id = productInfo.id
+//         // })
+//         res.status(200).json(productInfo)
+//     } catch (err) {
+//         res.status(404).json(err)
+//     }
+// })
+
 const withAuth = require('../../utils/auth')
-router.post('/', async (req, res) => {
+router.post('/', upload.single('uploaded_file'), async (req, res) => {
     try{
         console.log(req.body)
+        console.log(req.file)
         console.log(req.session.user_id)
         const productInfo = await Product.create({
             ...req.body,
@@ -45,7 +72,22 @@ router.delete('/:id', withAuth, async (req,res) => {
     }
 })
 
-router.post('/addproduct', withAuth, async (req, res) => {
+//keep
+// router.post('/addproduct', withAuth, async (req, res) => {
+//     try{
+//         const productInfo = await Product.create(req.body)
+//         console.log(productInfo)
+//         req.session.save(() => {
+//             req.session.id = productInfo.id
+//         })
+//         res.status(200).json(productInfo)
+//     }catch (err) {
+//         res.status(404).json(err)
+//     }
+// })
+
+//new
+router.post('/addproduct', withAuth, upload.single('uploaded_file'), async (req, res) => {
     try{
         const productInfo = await Product.create(req.body)
         console.log(productInfo)
