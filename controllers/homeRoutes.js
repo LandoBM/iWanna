@@ -77,6 +77,51 @@ router.get('/product/:id', withAuth, async(req, res) => {
     }
 })
 
+
+router.get('/comment/:id', withAuth, async(req, res) => {
+    try {
+        const commentData = await Comment.findByPk(req.params.id,{
+            attributes: [
+                'comment_id',
+                'user_id',
+                'product_id',
+                'comment'
+            ],
+            include: [
+                // User,
+                // {
+                //     model: Comment,
+                //     include: [User]
+                // }
+                {
+                    model: User,
+                    attributes: ['id', 'name', 'email']
+                },
+                {
+                    model: Product,
+                    attributes: ['product_id', 'product_name', 'condition', 'date', 'user_id'],
+                    include: {
+                        model: User,
+                        attributes: ['id', 'name', 'email'],
+                        model: Comment,
+                        attributes: ['comment_id','user_id','product_id','comment']
+                    }
+                }
+            ]
+        })
+        //const product = prodData.map((product) => product.get({plain: true}))
+        const comment = commentData.get({plain: true})
+        console.log('COMMENT:',comment)
+        res.render('/', {
+            ...comment,
+            logged_in: req.session.logged_in
+        })
+    } catch (err) {
+        res.status(500).json(err)
+    }
+})
+
+
 //TESTING 
 
 router.get('/addproduct', withAuth, async(req, res) => {
@@ -120,8 +165,9 @@ router.get('/editproduct/:id', withAuth, async (req,res) => {
             ]
         })
         const product = prodData.get({ plain: true })
-        res.render('/addproduct', {
-            ...product,
+        console.log(product)
+        res.render('editproduct', {
+            product,
             logged_in: req.session.logged_in
         })
     } catch (err) {

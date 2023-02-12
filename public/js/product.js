@@ -1,16 +1,16 @@
 const newFormHandler = async (event) => {
     event.preventDefault()
 
-    const prodName = document.querySelector('#prodName').value.trim()
-    const prodCond = document.querySelector('#prodCond').value.trim()
+    const product_name = document.querySelector('#prodName').value.trim()
+    const condition = document.querySelector('#prodCond').value.trim()
 
-    console.log('--------PRODNAME', prodName)
-    console.log('--------CONDITION', prodCond)
+    console.log('--------PRODNAME', product_name)
+    console.log('--------CONDITION', condition)
 
-    if(prodName && prodCond){
+    if(product_name && condition){
         const response = await fetch(`/api/product`, {
             method: 'POST',
-            body: JSON.stringify ({prodName, prodCond}),
+            body: JSON.stringify ({product_name, condition}),
             headers: {
                 'Content-Type': 'application/json',
             }
@@ -36,9 +36,7 @@ const delBtnHandler = async (event) => {
         })
 
         if (response.ok) {
-            document.location.replace('/addproduct', {
-
-            })
+            document.location.replace('/addproduct')
         } else {
             alert('Failed to delete item')
         }
