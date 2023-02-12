@@ -2,7 +2,9 @@ const newFormHandler = async (event) => {
     event.preventDefault()
 
     const product_name = document.querySelector('#prodName').value.trim()
-    const condition = document.querySelector('#prodCond').value.trim()
+    const Condition = document.querySelector('#prodCond')
+    var value = Condition.value;
+    var condition = Condition.options[Condition.selectedIndex].text;
 
     console.log('--------PRODNAME', product_name)
     console.log('--------CONDITION', condition)
