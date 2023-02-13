@@ -31,6 +31,13 @@ Product.init(
                 key: 'id',
             }
         },
+        image: {
+            type: DataTypes.STRING
+        },
+        price: {
+            type: DataTypes.DECIMAL,
+            allowNull: false
+        }
     },
     {
         sequelize,
