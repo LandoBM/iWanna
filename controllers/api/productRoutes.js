@@ -1,30 +1,65 @@
 const router = require('express').Router();
-const { Product } = require('../../models/');
+const { Product } = require('../../models');
+const path = require('path')
+const multer  = require('multer')
+const storage = multer.diskStorage({ 
+    dest: (req, file, cb) => {
+        cb(null, '../../images')
+    },
+    filename: (req, file, cb) => {
+        cb(null, Date.now() + path.extname(file.originalname))
+    } 
+})
+const upload = multer({storage: storage})
 
-//TESTING 
+//keep
+// const withAuth = require('../../utils/auth')
+// router.post('/', async (req, res) => {
+//     try{
+//         console.log(req.body)
+//         console.log(req.session.user_id)
+//         const productInfo = await Product.create({
+//             ...req.body,
+//             user_id: req.session.user_test,
+
+//         //     //product_id: req.session.user_id
+//         //     // return res.status(201).json({
+//         //     //     productInfo,
+//         //     // });
+//         })
+//         console.log('PRODUCT INFO ---------', productInfo)
+//         // req.session.save(() => {
+//         //     req.session.id = productInfo.id
+//         // })
+//         res.status(200).json(productInfo)
+//     } catch (err) {
+//         res.status(404).json(err)
+//     }
+// })
+
 const withAuth = require('../../utils/auth')
-router.post('/', async (req, res) => {
+router.post('/upload', upload.single('image'), async (req, res) => {
     try{
+
+        const file = req.file
+        const fb = req.file.filename
         console.log(req.body)
+        console.log(file)
+        console.log(fb)
         console.log(req.session.user_id)
         const productInfo = await Product.create({
             ...req.body,
             user_id: req.session.user_test,
 
-        //     //product_id: req.session.user_id
-        //     // return res.status(201).json({
-        //     //     productInfo,
-        //     // });
         })
         console.log('PRODUCT INFO ---------', productInfo)
-        // req.session.save(() => {
-        //     req.session.id = productInfo.id
-        // })
         res.status(200).json(productInfo)
+        res.send(file)
     } catch (err) {
         res.status(404).json(err)
     }
 })
+
 
 router.delete('/:id', withAuth, async (req,res) => {
     console.log('-------REQ.PARAMS', req.params.id)
@@ -45,7 +80,22 @@ router.delete('/:id', withAuth, async (req,res) => {
     }
 })
 
-router.post('/addproduct', withAuth, async (req, res) => {
+//keep
+// router.post('/addproduct', withAuth, async (req, res) => {
+//     try{
+//         const productInfo = await Product.create(req.body)
+//         console.log(productInfo)
+//         req.session.save(() => {
+//             req.session.id = productInfo.id
+//         })
+//         res.status(200).json(productInfo)
+//     }catch (err) {
+//         res.status(404).json(err)
+//     }
+// })
+
+//new
+router.post('/addproduct', withAuth, upload.single('uploaded_file'), async (req, res) => {
     try{
         const productInfo = await Product.create(req.body)
         console.log(productInfo)

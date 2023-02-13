@@ -3,14 +3,17 @@ const newFormHandler = async (event) => {
 
     const product_name = document.querySelector('#prodName').value.trim()
     const condition = document.querySelector('#prodCond').value.trim()
+    const price = document.querySelector('#prodPrice').value.trim()
+    const image = document.querySelector('#imgUpload').value.trim()
 
     console.log('--------PRODNAME', product_name)
     console.log('--------CONDITION', condition)
+    console.log('--------IMAGE', image)
 
-    if(product_name && condition){
-        const response = await fetch(`/api/product`, {
+    if(product_name && condition && price && image){
+        const response = await fetch('/api/product/', {
             method: 'POST',
-            body: JSON.stringify ({product_name, condition}),
+            body: JSON.stringify ({product_name, condition, price, image}),
             headers: {
                 'Content-Type': 'application/json',
             }
@@ -19,7 +22,7 @@ const newFormHandler = async (event) => {
         console.log('RESPONSE',response)
 
         if(response.ok){
-            document.location.replace('/addproduct')
+            document.location.replace('/product')
         } else {
             alert('Failed to add item')
         }
