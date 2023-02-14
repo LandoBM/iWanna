@@ -6,6 +6,15 @@
 <h2>{{product_name}}</h2>
 <h2>added by: {{user.name}} on {{date}}</h2>
 <h2>codition: {{condition}}</h2>
+<h2>price: ${{price}}</h2>
+{{!-- {{#each product}} --}}
+<h2>IMG:</h2><img src="/{{path}}" alt="image">
+{{!-- {{/each}} --}}
+<h2>TEST: {{image}}</h2>
+{{!-- {{#each products}}
+<img src="{{image}}" alt="image">
+{{/each}} --}}
+
 <div id="delcom">
 <h2>
     {{#each comments}}

@@ -41,7 +41,10 @@ router.get('/product/:id', withAuth, async(req, res) => {
                 'product_name',
                 'condition',
                 'date',
-                'user_id'
+                'user_id',
+                'image',
+                'price',
+                'path'
             ],
             include: [
                 // User,
@@ -60,7 +63,7 @@ router.get('/product/:id', withAuth, async(req, res) => {
                         model: User,
                         attributes: ['id', 'name', 'email'],
                         model: Product,
-                        attributes: ['product_id','product_name','condition','date','user_id']
+                        attributes: ['product_id','product_name','condition','date','user_id', 'image', 'price', 'path']
                     }
                 }
             ]
@@ -99,7 +102,7 @@ router.get('/comment/:id', withAuth, async(req, res) => {
                 },
                 {
                     model: Product,
-                    attributes: ['product_id', 'product_name', 'condition', 'date', 'user_id'],
+                    attributes: ['product_id', 'product_name', 'condition', 'date', 'user_id', 'image', 'price'],
                     include: {
                         model: User,
                         attributes: ['id', 'name', 'email'],
@@ -128,7 +131,7 @@ router.get('/addproduct', withAuth, async(req, res) => {
     try {
         const userData = await User.findByPk(req.session.user_id, {
             attributes: { exclude: ['password']},
-            include: [{model: Product, attributes: ['product_id','product_name','condition','date','user_id']}],
+            include: [{model: Product, attributes: ['product_id','product_name','condition','date','user_id', 'image', 'price']}],
         })
 
         //console.log('USER DATA:', userData)
@@ -148,7 +151,7 @@ router.get('/addproduct', withAuth, async(req, res) => {
 router.get('/editproduct/:id', withAuth, async (req,res) => {
     try {
         const prodData = await Product.findByPk(req.params.id, {
-            attributes: ['product_id','product_name','condition','date','user_id'],
+            attributes: ['product_id','product_name','condition','date','user_id', 'image', 'price'],
             include: [
                 {
                     model: User,
