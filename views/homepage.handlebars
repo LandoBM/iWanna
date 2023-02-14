@@ -1,5 +1,6 @@
 <body>
-    {{!-- <h1>Products:</h1>
+    <div class="main-container">
+        <h1>Products:</h1>
     {{#if logged_in}}
     {{#each products}}
     <div>
@@ -12,140 +13,9 @@
         <h2><a href="/login">{{product_name}}</a></h2>
     </div>
     {{/each}}
-    {{/if}} --}}
-
-    <div class="product-grid">
-        <div class="row">
-            <div class="row-sm-3">
-                <div class="well">
-                    <h1>Products:</h1>
-                    {{#if logged_in}}
-                    {{#each products}}
-                    <div>
-                        <h2><a href="/product/{{product_id}}">{{product_name}}</a></h2>
-                    </div>
-                    {{/each}}
-                    {{else}}
-                    {{#each products}}
-                    <div>
-                        <h2><a href="/login">{{product_name}}</a></h2>
-                    </div>
-                    {{/each}}
-                    {{/if}}
-
-                    {{!-- <h4>Products</h4>
-                    <ul>
-                        <li>Price:</li>
-                        <li>Conditon:</li>
-                        <li>Seller Information:</li>
-                    </ul> --}}
-                </div>
-            </div>
-            <div class="row-sm-3">
-                <div class="well">
-                    <h4>Products:</h4>
-                    <ul>
-                        <li>Price:</li>
-                        <li>Conditon:</li>
-                        <li>Seller Information:</li>
-                    </ul>
-                    <div class="product-img">
-                        <h4>image</h4>
-                    </div>
-
-                </div>
-            </div>
-            <div class="row-sm-3">
-                <div class="well">
-                    <h4>Products:</h4>
-                    <ul>
-                        <li>Price:</li>
-                        <li>Conditon:</li>
-                        <li>Seller Information:</li>
-                    </ul>
-
-                </div>
-            </div>
-            <div class="row-sm-3">
-                <div class="well">
-                    <h4>Products:</h4>
-                    <ul>
-                        <li>Price:</li>
-                        <li>Conditon:</li>
-                        <li>Seller Information:</li>
-                    </ul>
-
-                </div>
-            </div>
-            <div class="row-sm-3">
-                <div class="well">
-                    <h4>Products:</h4>
-                    <ul>
-                        <li>Price:</li>
-                        <li>Conditon:</li>
-                        <li>Seller Information:</li>
-                    </ul>
-
-                </div>
-            </div>
-        </div>
-        <div class="col">
-            <div class="col-sm-4">
-                <div class="well">
-                    <h2>Products:</h2>
-                    <ul>
-                        <li>Price:</li>
-                        <li>Conditon:</li>
-                        <li>Seller Information:</li>
-                    </ul>
-                </div>
-            </div>
-            <div class="col-sm-4">
-                <div class="well">
-                    <h2>Products:</h2>
-                    <ul>
-                        <li>Price:</li>
-                        <li>Conditon:</li>
-                        <li>Seller Information:</li>
-                    </ul>
-                </div>
-            </div>
-            <div class="col-sm-4">
-                <div class="well">
-                    <h2>Products</h2>
-                    <ul>
-                        <li>Price:</li>
-                        <li>Conditon:</li>
-                        <li>Seller Information:</li>
-                    </ul>
-                </div>
-            </div>
-            <div class="col-sm-4">
-                <div class="well">
-                    <h2>Products</h2>
-                    <ul>
-                        <li>Price:</li>
-                        <li>Conditon:</li>
-                        <li>Seller Information:</li>
-                    </ul>
-                </div>
-            </div>
-            <div class="col-sm-4">
-                <div class="well">
-                    <h2>Products</h2>
-                    <ul>
-                        <li>Price:</li>
-                        <li>Conditon:</li>
-                        <li>Seller Information:</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
+    {{/if}}
     </div>
-    </div>
-    </div>
-    </div>
-    </div>
+
 
 </body>
 
