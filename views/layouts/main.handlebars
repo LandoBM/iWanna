@@ -9,17 +9,22 @@
     <link rel="stylesheet" href="/css/style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,300;0,400;0,500;0,700;1,400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,300;0,400;0,500;0,700;1,400&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    {{!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script> --}}
 
 </head>
 
 <body>
-    <div>
+    <div class="page-container">
         <header>
             <img class="logo" src="/images/iWannaedit.jpg" width="100" height="100" alt="iWanna Logo">
-            <nav>
-                 
-                <ul class="navbar-links">             
+            <nav class="sidenav">
+
+                <ul class="navbar-links">
                     <button type="button" id="upBtn">Sign Up!</button>
                     <li><a href="/" data-replace="Home">Home</a></li>
                     <li><a href="/login" data-replace="Login">Login</a></li>
@@ -27,21 +32,37 @@
                     <li><a href="#" data-replace="Your Listings">Your Listings</a></li>
                     <li><a href="#" data-replace="Cart">Cart</a></li>
                 </ul>
-                
-                
+
+
             </nav>
-            
+
         </header>
 
         <main>
             {{{ body }}}
         </main>
 
-        <footer>
-
-        </footer>
-
     </div>
+     <footer>
+            <div class="footer">
+                <ul class="footer-links">
+                     <button type="button" id="upBtn">Sign Up!</button>
+                    <li><a href="/" data-replace="Home">Home</a></li>
+                    <li><a href="/login" data-replace="Login">Login</a></li>
+                    <li><a href="#" data-replace="Contact Us!">Contact Us!</a></li> 
+                </ul>
+                <ul class="socials">
+                    <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                    <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                    <li><a href="https://github.com/LandoBM/iWanna.git" target="_blank"><i class="fa fa-github"></i></a></li>
+                    <li><a href="#"><i class="fa fa-linkedin-square"></i></a></li>
+                    <li><a href="#"><i class="fa fa-instagram"></i></a></li>
+                </ul>
+                <div class="footer-copyright">
+                    <p>copyright &copy;2023</p>
+                </div>
+            </div>
+        </footer>
 
     {{#if logged_in}}
     <script src="/js/logout.js"></script>
@@ -52,14 +73,14 @@
 </html>
 
 
- {{!-- <nav>
-                {{#if logged_in}}
-                <a href="/">Home</a>
-                <a href="/product">View All Products</a>
-                <button class="no-button" id="logout">logout</button>
-                {{else}}
-                <a href="/login">Login</a>
-                <a href="/">Home</a>
-                <a href="/product">View All Products</a>
-                {{/if}}
-            </nav> --}}
+{{!-- <nav>
+    {{#if logged_in}}
+    <a href="/">Home</a>
+    <a href="/product">View All Products</a>
+    <button class="no-button" id="logout">logout</button>
+    {{else}}
+    <a href="/login">Login</a>
+    <a href="/">Home</a>
+    <a href="/product">View All Products</a>
+    {{/if}}
+</nav> --}}
