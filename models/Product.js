@@ -37,9 +37,12 @@ Product.init(
         price: {
             type: DataTypes.DECIMAL,
             allowNull: false
+<<<<<<< HEAD
         },
         path: {
             type: DataTypes.STRING
+=======
+>>>>>>> fa09666b8f5398e710742e57eabaa8d5bff49bff
         }
     },
     {

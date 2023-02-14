@@ -49,7 +49,7 @@ const newComForm = async (event) => {
     //console.log('--------COMMENT', comment)
 
     if(comment){
-        const response = await fetch(`/api/comment/${id}`, {
+        const response = await fetch(`/api/comment`, {
             method: 'POST',
             body: JSON.stringify ({comment}),
             headers: {
@@ -60,7 +60,7 @@ const newComForm = async (event) => {
         console.log('RESPONSE',response)
 
         if(response.ok){
-            document.location.replace('/addproduct')
+            document.location.replace(`/product/${id}`)
         } else {
             alert('Failed to add item')
         }

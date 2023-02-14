@@ -3,6 +3,7 @@
 
 <<<<<<< HEAD
     const product_name = document.querySelector('#prodName').value.trim()
+<<<<<<< HEAD
     const Condition = document.querySelector('#prodCond')
     var value = Condition.value;
     var condition = Condition.options[Condition.selectedIndex].text;
@@ -28,9 +29,28 @@
 //                 "Content-Type": "multipart/form-data"
 //                }
 //         })
+=======
+    const condition = document.querySelector('#prodCond').value.trim()
+    const price = document.querySelector('#prodPrice').value.trim()
+    const image = document.querySelector('#imgUpload').value.trim()
+
+    console.log('--------PRODNAME', product_name)
+    console.log('--------CONDITION', condition)
+    console.log('--------IMAGE', image)
+
+    if(product_name && condition && price && image){
+        const response = await fetch('/api/product/', {
+            method: 'POST',
+            body: JSON.stringify ({product_name, condition, price, image}),
+            headers: {
+                'Content-Type': 'application/json',
+            }
+        })
+>>>>>>> fa09666b8f5398e710742e57eabaa8d5bff49bff
         
 //         console.log('RESPONSE',response)
 
+<<<<<<< HEAD
 //         if(response.ok){
 //             document.location.replace('/addproduct')
 //         } else {
@@ -38,6 +58,15 @@
 //         }
 //     }
 // }
+=======
+        if(response.ok){
+            document.location.replace('/product')
+        } else {
+            alert('Failed to add item')
+        }
+    }
+}
+>>>>>>> fa09666b8f5398e710742e57eabaa8d5bff49bff
 
 
 
