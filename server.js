@@ -5,8 +5,7 @@
  const exphbs = require('express-handlebars');
  const routes = require('./controllers');
  const helpers = require('./utils/helpers');
- const path = require('path')
- 
+
  const sequelize = require('./config/connection');
  const SequelizeStore = require('connect-session-sequelize')(session.Store);
 
@@ -40,6 +39,23 @@
  app.set('view engine', 'handlebars');
 
  app.use(routes)
+
+  //new
+  const multer  = require('multer')
+ 
+//   const storage = multer.diskStorage({
+//    destination: function (req, file, cb) {
+//      cb(null, './uploads')
+//    },
+//    filename: function (req, file, cb) {
+//      cb(null, file.originalname)
+//    }
+//  })
+ //const upload = multer({ storage: storage })
+ 
+ app.use('/uploads', express.static('uploads'));
+ 
+ //end new
 
  sequelize.sync({ force: false }).then(() => {
     app.listen(PORT, () => console.log('Now listening'));
