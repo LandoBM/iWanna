@@ -44,7 +44,8 @@ const delComHandler = async (event) => {
 const newComForm = async (event) => {
     event.preventDefault()
     //if (event.target.hasAttribute('data-id')) {
-    const id = document.querySelector('.btn').getAttribute('data-id')
+    const id = document.querySelector('#addcom').getAttribute('data-id')
+    // const id = document.getAttribute('data-id').value
     const comment = document.querySelector('#addcom').value
     //console.log('--------COMMENT', comment)
 

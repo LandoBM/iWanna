@@ -11,7 +11,8 @@ router.get('/', async(req, res) => {
                 'product_name',
                 'condition',
                 'date',
-                'user_id'
+                'user_id',
+                'price'
             ],
             include: [
                 {
