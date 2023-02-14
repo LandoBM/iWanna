@@ -43,7 +43,8 @@ router.get('/product/:id', withAuth, async(req, res) => {
                 'date',
                 'user_id',
                 'image',
-                'price'
+                'price',
+                'path'
             ],
             include: [
                 // User,
@@ -62,7 +63,7 @@ router.get('/product/:id', withAuth, async(req, res) => {
                         model: User,
                         attributes: ['id', 'name', 'email'],
                         model: Product,
-                        attributes: ['product_id','product_name','condition','date','user_id', 'image', 'price']
+                        attributes: ['product_id','product_name','condition','date','user_id', 'image', 'price', 'path']
                     }
                 }
             ]
