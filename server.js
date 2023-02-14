@@ -40,9 +40,7 @@
 
  app.use(routes)
 
-<<<<<<< HEAD
- sequelize.sync({ force: false , alter : false }).then(() => {
-=======
+ 
   //new
   const multer  = require('multer')
  
@@ -60,7 +58,7 @@
  
  //end new
 
- sequelize.sync({ force: false }).then(() => {
->>>>>>> e291b4c04d56d0128aec9809f6446069bf98e788
+//  sequelize.sync({ force: false }).then(() => {
+  sequelize.sync({ force: false , alter : false }).then(() => {
     app.listen(PORT, () => console.log('Now listening'));
   });
