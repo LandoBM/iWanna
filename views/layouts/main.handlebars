@@ -15,21 +15,23 @@
 </head>
 
 <body>
-        <div class="page-container">
+    <div class="page-container">
         <header>
             <img class="logo" src="/images/iWannaedit.jpeg" width="100" height="100" alt="iWanna Logo">
             <nav class="sidenav">
 
                 <ul class="navbar-links">
                     {{#if logged_in}}
-                    {{!-- <button type="button" id="upBtn"><a href="/login" data-replace="Login">Sign Up!</a></button> --}}
+                    {{!-- <button type="button" id="upBtn"><a href="/login" data-replace="Login">Sign Up!</a></button>
+                    --}}
                     <li><a href="/" data-replace="Home">Home</a></li>
                     {{!-- <li><a href="/login" data-replace="Login">Login</a></li> --}}
                     {{!-- <li><a href="/product" data-replace="Products">Products</a></li> --}}
                     <li><a href="/addproduct" data-replace="Your Listings">Your Listings</a></li>
                     <li><a href="#" data-replace="Cart">Cart</a></li>
-                     <button type="button" id="logout">logout</button>
-                     {{else}}
+                    <li><a href="#" data-replace="Logout" id="logout">Logout</a></li>
+                    {{!-- <button type="button" id="logout">Logout</button> --}}
+                    {{else}}
                     <button type="button" id="upBtn"><a href="/login" data-replace="Login">Sign Up!</a></button>
                     <li><a href="/login" data-replace="Login">Login</a></li>
                     <li><a href="/" data-replace="Home">Home</a></li>
@@ -39,37 +41,39 @@
 
 
             </nav>
-
-            </div>
-
-        <main>
+        </header>
+        <main class="body-container">
             {{{ body }}}
         </main>
 
-        {{!-- <footer>
+    </div>
 
-        </footer> --}}
 
-         <footer class="footer-container">
-            <div class="footer">
-                <ul class="footer-links">
-                     <button type="button" id="upBtn"><a href="/login" data-replace="Login">Sign Up!</a></button>
-                    <li><a href="/" data-replace="Home">Home</a></li>
-                    <li><a href="/login" data-replace="Login">Login</a></li>
-                    <li><a href="#" data-replace="Contact Us!">Contact Us!</a></li>  
-                </ul> 
-                <ul class="socials">
-                    <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-                    <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-                    <li><a href="https://github.com/LandoBM/iWanna.git" target="_blank"><i class="fa fa-github"></i></a></li>
-                    <li><a href="#"><i class="fa fa-linkedin-square"></i></a></li>
-                    <li><a href="#"><i class="fa fa-instagram"></i></a></li>
-                </ul>
-                <div class="footer-copyright">
-                    <p>copyright &copy;2023</p>
-                </div>
+    {{!-- <footer>
+
+    </footer> --}}
+
+    <footer class="footer-container">
+        <div class="footer">
+            <ul class="footer-links">
+                {{!-- <button type="button" id="upBtn"><a href="/login" data-replace="Login">Sign Up!</a></button> --}}
+                <li><a href="/" data-replace="Home">Home</a></li>
+                <li><a href="/login" data-replace="Login">Login</a></li>
+
+            </ul>
+            <ul class="socials">
+                <li><a href="https://www.facebook.com/" target="_blank"><i class="fa fa-facebook"></i></a></li>
+                <li><a href="https://twitter.com/?lang=en" target="_blank"><i class="fa fa-twitter"></i></a></li>
+                <li><a href="https://github.com/LandoBM/iWanna.git" target="_blank"><i class="fa fa-github"></i></a>
+                </li>
+                <li><a href="https://www.linkedin.com/" target="_blank"><i class="fa fa-linkedin-square"></i></a></li>
+                <li><a href="https://www.instagram.com/" target="_blank"><i class="fa fa-instagram"></i></a></li>
+            </ul>
+            <div class="footer-copyright">
+                <p>copyright &copy;2023</p>
             </div>
-        </footer>
+        </div>
+    </footer>
 
     {{#if logged_in}}
     <script src="/js/logout.js"></script>
@@ -78,16 +82,3 @@
 </body>
 
 </html>
-
-
-{{!-- <nav>
-    {{#if logged_in}}
-    <a href="/">Home</a>
-    <a href="/product">View All Products</a>
-    <button class="no-button" id="logout">logout</button>
-    {{else}}
-    <a href="/login">Login</a>
-    <a href="/">Home</a>
-    <a href="/product">View All Products</a>
-    {{/if}}
-</nav> --}}

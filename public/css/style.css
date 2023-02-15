@@ -9,7 +9,7 @@ body{
     height: 100%;
     background-color: rgb(235 254 235);
     font-family: 'Raleway', sans-serif;
-    padding: 5%;
+    padding: 10px;
     text-decoration: none;
 }
 
@@ -58,7 +58,7 @@ main {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 20px; 
+    /* padding: 20px;  */
 } 
 
 .logo {
@@ -71,19 +71,19 @@ main {
 
 /*NAVBAR*/
 .navbar-links,
-.footer-links {
+.footer-links, #logout {
     list-style: none;
 }
 
 .navbar-links li,
-.footer-links li{
+.footer-links li, #logout{
     display: inline-block;
     padding: 0px 10px;
 
 }
 
 .navbar-links li a,
-.footer-links li a {
+.footer-links li a, #logout{
     color: darkolivegreen;
     text-decoration: none;
     overflow: hidden;
@@ -91,7 +91,7 @@ main {
     display: inline-block;
 }
 
-.navbar-links li a::before{
+.navbar-links li a::before, #logout::before{
     content: '';
     position: absolute;
     width: 100%;
@@ -104,13 +104,13 @@ main {
     transition: transform .3s cubic-bezier(0.76, 0, 0.24, 1);
 }
 
-.navbar-links li a:hover::before{
+.navbar-links li a:hover::before, #logout:hover::before{
     transform-origin: 0% 50%;
     transform: scaleX(1);
     position: absolute;
 }
 
-.navbar-links li a::after {
+.navbar-links li a::after, #logout::after {
     content: '';
     position: absolute;
     width: 100%;
@@ -122,7 +122,7 @@ main {
 }
 
 .navbar-links li a:hover::after,
-a:focus::after {
+a:focus::after, #logout:hover::after:focus{
     color: black;
     transform: translate3d(0, 0, 0);
     position: absolute;
@@ -136,6 +136,7 @@ a:focus::after {
     text-decoration: none;
     transition: all 0.3 ease 0s;
     color: darkolivegreen;
+    background-color: white;
     border: 1.1px solid darkolivegreen;
 }
 
@@ -199,13 +200,14 @@ a:focus::after {
 }
 
 /* HOMEPAGE */
-.main-container{
-    
+.main-container, .body-container{
     display: block;
     text-align: center;
     padding: 10px;
     justify-content: center;
 }
+
+
 
 /* LOGIN PAGE */
 
