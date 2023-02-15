@@ -1,5 +1,6 @@
 const router = require('express').Router();
 const { Product } = require('../../models');
+<<<<<<< HEAD
 const multer  = require('multer')
 const path = require('path')
 //const upload = multer({ dest: '../../uploads' })
@@ -63,6 +64,19 @@ router.get('/', (req, res) => {
     }
     })
 
+=======
+const path = require('path')
+const multer  = require('multer')
+const storage = multer.diskStorage({ 
+    dest: (req, file, cb) => {
+        cb(null, '../../images')
+    },
+    filename: (req, file, cb) => {
+        cb(null, Date.now() + path.extname(file.originalname))
+    } 
+})
+const upload = multer({storage: storage})
+>>>>>>> fa09666b8f5398e710742e57eabaa8d5bff49bff
 
 //keep
 // const withAuth = require('../../utils/auth')
@@ -90,30 +104,37 @@ router.get('/', (req, res) => {
 // })
 
 const withAuth = require('../../utils/auth')
+<<<<<<< HEAD
 router.post('/img', upload.single('imgfile'), async (req, res) => {
     try{
         // console.log(req.body)
         // console.log(req.file.path)
         // console.log(req.session.user_id)
         //console.log('4', JSON.stringify(req.file))
+=======
+router.post('/upload', upload.single('image'), async (req, res) => {
+    try{
+
+        const file = req.file
+        const fb = req.file.filename
+        console.log(req.body)
+        console.log(file)
+        console.log(fb)
+        console.log(req.session.user_id)
+>>>>>>> fa09666b8f5398e710742e57eabaa8d5bff49bff
         const productInfo = await Product.create({
             ...req.body,
             user_id: req.session.user_test,
 
-        //     //product_id: req.session.user_id
-        //     // return res.status(201).json({
-        //     //     productInfo,
-        //     // });
         })
         console.log('PRODUCT INFO ---------', productInfo)
-        // req.session.save(() => {
-        //     req.session.id = productInfo.id
-        // })
         res.status(200).json(productInfo)
+        res.send(file)
     } catch (err) {
         res.status(404).json(err)
     }
 })
+
 
 router.delete('/:id', withAuth, async (req,res) => {
     console.log('-------REQ.PARAMS', req.params.id)

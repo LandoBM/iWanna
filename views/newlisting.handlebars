@@ -1,0 +1,98 @@
+<div class="delete-prod">
+<h1>Hi, {{name}}</h1>
+{{#if products.length}}
+{{#each products}}
+<h1>Users Current Listed Items</h1>
+{{!-- <h2>{{product_name}}</h2> --}}
+<h2><a href="/product/{{product_id}}">{{product_name}}</a></h2>
+ <button class="btn btn-sm btn-danger" data-id="{{id}}">DELETE</button>
+{{/each}}
+
+{{else}}
+<p>this user has no listed items</p>
+{{/if}}
+</div>
+
+<div>
+<h1>Add New Product:</h1>
+<form class="new-prod">
+<div class"form-group">
+<label for="prodName">Item name:</label>
+<input class="form-input" type="text" id="prodName" name="prodName" />
+</div>
+
+{{!-- location form --}}
+<div class="row g-3">
+  <div class="col-sm-7">
+    <input id="cityName" name="cityName" type="text" class="form-control" placeholder="City" aria-label="City">
+  </div>
+  <div class="col-sm">
+    <input type="text" class="form-control" placeholder="State" aria-label="State">
+  </div>
+  <div class="col-sm">
+    <input type="text" class="form-control" placeholder="Zip" aria-label="Zip">
+  </div>
+</div>
+
+<div class="container">
+    <div class="input-group mb-3">
+        <label class="input-group-text" for="inputGroupSelect01">Category</label>
+        <select class="form-select" id="inputGroupSelect01">
+            <option selected>Choose...</option>
+            <option value="1">Appliances</option>
+            <option value="2">Cars</option>
+            <option value="4">Antiques</option>
+            <option value="5">Electronics</option>
+            <option value="6">Pets</option>
+        </select>
+        <div>
+            <label class="input-group-text" for="inputGroupSelect01">Condition</label>
+            <select class="form-select" id="prodCond">
+                <option selected>Choose...</option>
+                <option value="New">New</option>
+                <option value="Like New">Like New</option>
+                <option value="4">Refurbished</option>
+                <option value="5">Used</option>
+            </select> 
+        </div>
+
+
+        <div class="input-group input-group-sm mb-3">
+            <span class="input-group-text" id="inputGroup-sizing-sm">make / manufacturer</span>
+            <input type="text" class="form-control" aria-label="Sizing example input"
+                aria-describedby="inputGroup-sizing-sm">
+        </div>
+        <div class="input-group input-group-sm mb-3">
+            <span class="input-group-text" id="inputGroup-sizing-sm">model name / number</span>
+            <input type="text" class="form-control" aria-label="Sizing example input"
+                aria-describedby="inputGroup-sizing-sm">
+        </div>
+    </div>
+    {{!-- price input --}}
+    <div class="input-group mb-3">
+        <span class="input-group-text">$</span>
+        <span class="input-group-text">Price</span>
+        <input type="text" class="form-control" aria-label="Dollar amount (with dot and two decimal places)">
+    </div>
+    <div class="form-floating">
+        <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea2"
+            style="height: 100px"></textarea>
+        <label for="floatingTextarea2">Comments</label>
+    </div>
+    <h1>Image upload</h1>
+
+    <form id="theImageForm">
+        <label for="theImageField" id="theImageContainer">
+            <input type="file" id="theImageField" accept="image/png, image/jpeg">
+            Click here to upload or <b>drag-and-drop</b> an image...
+        </label>
+        <p id="errorMessage" class="hide"></p>
+        <p id="successMessage" class="hide"></p>
+        <button class="btn btn-lg btn-primary" type="submit">Upload</button>
+        <a href="" id="clearImage">Clear</a> 
+        
+        <button  data-id="{{id}}" class="btn btn-primary">Add</button>
+    </form>
+
+</div>
+<script src="./js/product.js"></script>

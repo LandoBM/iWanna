@@ -1,7 +1,66 @@
 // const newFormHandler = async (event) => {
 //     event.preventDefault()
-//             document.location.replace('/')
+
+
+    const product_name = document.querySelector('#prodName').value.trim()
+//     const product_name = document.querySelector('#prodName').value.trim()
+//     const condition = document.querySelector('#prodCond').value.trim()
+//     const price = document.querySelector('#prodPrice').value.trim()
+//     const image = document.querySelector('#prodimg').value.trim()
+//     const image = document.querySelector('#prodimg')
+
+//     console.log('--------PRODNAME', product_name)
+//     console.log('--------CONDITION', condition)
+
+//     if(product_name && condition && price){
+//         const response = await fetch(`/api/product/img`, {
+//             method: 'POST',
+//             body: JSON.stringify ({product_name, condition, price}),
+//             headers: {
+//                 'Content-Type': 'application/json',
+//             }
+//             headers: {
+//                 "Content-Type": "multipart/form-data"
+//                }
+//         })
+
+    const condition = document.querySelector('#prodCond').value.trim()
+    const price = document.querySelector('#prodPrice').value.trim()
+    const image = document.querySelector('#imgUpload').value.trim()
+
+    console.log('--------PRODNAME', product_name)
+    console.log('--------CONDITION', condition)
+    console.log('--------IMAGE', image)
+
+    if(product_name && condition && price && image){
+        const response = await fetch('/api/product/', {
+            method: 'POST',
+            body: JSON.stringify ({product_name, condition, price, image}),
+            headers: {
+                'Content-Type': 'application/json',
+            }
+        })
+
+        
+//         console.log('RESPONSE',response)
+
+
+//         if(response.ok){
+//             document.location.replace('/addproduct')
+//         } else {
+//             alert('Failed to add item')
+//         }
 //     }
+// }
+=======
+        if(response.ok){
+            document.location.replace('/product')
+        } else {
+            alert('Failed to add item')
+        }
+    }
+}
+>>>>>>> fa09666b8f5398e710742e57eabaa8d5bff49bff
 
 
 

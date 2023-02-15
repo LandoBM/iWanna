@@ -32,7 +32,6 @@ router.post('/login', async (req,res)=> {
         }
         req.session.save(() => {
             req.session.user_id = userInfo.id
-            req.session.user_test = userInfo.id //WHY DID THIS WORK
             req.session.logged_in = true
             res.json({ user : userInfo, message: `Logging in...`})
         })

@@ -18,6 +18,17 @@
 
  const hbs = exphbs.create({ helpers });
 
+ const multer  = require('multer')
+  const storage = multer.diskStorage({ 
+    dest: (req, file, cb) => {
+        cb(null, '../../images')
+    },
+    filename: (req, file, cb) => {
+        cb(null, Date.now() + path.extname(file.originalname))
+    } 
+})
+const upload = multer({storage: storage})
+
  const sess = {
   secret: 'Super secret secret',
   cookie: {
@@ -40,6 +51,7 @@
 
  app.use(routes)
 
+ 
   //new
   const multer  = require('multer')
  
@@ -57,6 +69,7 @@
  
  //end new
 
- sequelize.sync({ force: false }).then(() => {
+//  sequelize.sync({ force: false }).then(() => {
+  sequelize.sync({ force: false , alter : false }).then(() => {
     app.listen(PORT, () => console.log('Now listening'));
   });

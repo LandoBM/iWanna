@@ -1,0 +1,87 @@
+<div>
+    <h2><a href="/product/{{product_id}}">{{product_name}}</a></h2>
+    <h3><a href="/product/{{prodeuct_id}}">{{condition}}{{date}}</a></h3>
+    <h3><a href="/product/{{prodeuct_id}}">{{date}}</a></h3>
+</div>
+{{!--posting title --}}
+<div class="input-group mb-3">
+  <span class="input-group-text" id="inputGroup-sizing-default">Posting Title</span>
+  <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+</div>
+
+{{!-- location form --}}
+<div class="row g-3">
+  <div class="col-sm-7">
+    <input type="text" class="form-control" placeholder="City" aria-label="City">
+  </div>
+  <div class="col-sm">
+    <input type="text" class="form-control" placeholder="State" aria-label="State">
+  </div>
+  <div class="col-sm">
+    <input type="text" class="form-control" placeholder="Zip" aria-label="Zip">
+  </div>
+</div>
+
+<div class="container">
+    <div class="input-group mb-3">
+        <label class="input-group-text" for="inputGroupSelect01">Category</label>
+        <select class="form-select" id="inputGroupSelect01">
+            <option selected>Choose...</option>
+            <option value="1">Appliances</option>
+            <option value="2">Cars</option>
+            <option value="4">Antiques</option>
+            <option value="5">Electronics</option>
+            <option value="6">Pets</option>
+        </select>
+        <div>
+            <label class="input-group-text" for="inputGroupSelect01">Condition</label>
+            <select class="form-select" id="inputGroupSelect01">
+                <option selected>Choose...</option>
+                <option value="1">New</option>
+                <option value="2">Like New</option>
+                <option value="4">Used</option>
+                <option value="5">Refurbished</option>
+            </select> 
+        </div>
+
+
+        <div class="input-group input-group-sm mb-3">
+            <span class="input-group-text" id="inputGroup-sizing-sm">make / manufacturer</span>
+            <input type="text" class="form-control" aria-label="Sizing example input"
+                aria-describedby="inputGroup-sizing-sm">
+        </div>
+        <div class="input-group input-group-sm mb-3">
+            <span class="input-group-text" id="inputGroup-sizing-sm">model name / number</span>
+            <input type="text" class="form-control" aria-label="Sizing example input"
+                aria-describedby="inputGroup-sizing-sm">
+        </div>
+    </div>
+    {{!-- price input --}}
+    <div class="input-group mb-3">
+        <span class="input-group-text">$</span>
+        <span class="input-group-text">Price</span>
+        <input type="text" class="form-control" aria-label="Dollar amount (with dot and two decimal places)">
+    </div>
+    <div class="form-floating">
+        <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea2"
+            style="height: 100px"></textarea>
+        <label for="floatingTextarea2">Comments</label>
+    </div>
+    <h1>Image upload</h1>
+
+    <form id="theImageForm">
+        <label for="theImageField" id="theImageContainer">
+            <input type="file" id="theImageField" accept="image/png, image/jpeg">
+            Click here to upload or <b>drag-and-drop</b> an image...
+        </label>
+        <p id="errorMessage" class="hide"></p>
+        <p id="successMessage" class="hide"></p>
+        <button class="btn btn-lg btn-primary" type="submit">Upload</button>
+        <a href="" id="clearImage">Clear</a>
+    </form>
+
+
+    <script src="/libs/jquery/dist/jquery.min.js"></script>
+    <script src="/libs/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="product.js"></script>
+</div>
