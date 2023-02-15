@@ -33,52 +33,6 @@ router.get("/", async (req, res) => {
   // res.render('homepage')
 });
 router.get('/product/:id', withAuth, async(req, res) => {
-<<<<<<< HEAD
-    try {
-        const prodData = await Product.findByPk(req.params.id,{
-            attributes: [
-                'product_id',
-                'product_name',
-                'condition',
-                'date',
-                'user_id',
-                'image',
-                'price',
-                'path'
-            ],
-            include: [
-                // User,
-                // {
-                //     model: Comment,
-                //     include: [User]
-                // }
-                {
-                    model: User,
-                    attributes: ['id', 'name', 'email']
-                },
-                {
-                    model: Comment,
-                    attributes: ['comment_id', 'user_id', 'product_id', 'comment'],
-                    include: {
-                        model: User,
-                        attributes: ['id', 'name', 'email'],
-                        model: Product,
-                        attributes: ['product_id','product_name','condition','date','user_id', 'image', 'price', 'path']
-                    }
-                }
-            ]
-        })
-        //const product = prodData.map((product) => product.get({plain: true}))
-        const product = prodData.get({plain: true})
-        console.log('PRODUCT:',product)
-        res.render('product', {
-            ...product,
-            logged_in: req.session.logged_in
-        })
-    } catch (err) {
-        res.status(500).json(err)
-    }
-=======
   try {
       const prodData = await Product.findByPk(req.params.id,{
           attributes: [
@@ -120,7 +74,6 @@ router.get('/product/:id', withAuth, async(req, res) => {
   } catch (err) {
       res.status(500).json(err)
   }
->>>>>>> fa09666b8f5398e710742e57eabaa8d5bff49bff
 })
 
 
