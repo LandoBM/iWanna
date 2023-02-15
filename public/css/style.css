@@ -76,7 +76,7 @@ main {
 }
 
 .navbar-links li,
-.footer-links li {
+.footer-links li{
     display: inline-block;
     padding: 0px 10px;
 
@@ -91,7 +91,7 @@ main {
     display: inline-block;
 }
 
-.navbar-links li a::before {
+.navbar-links li a::before{
     content: '';
     position: absolute;
     width: 100%;
@@ -104,7 +104,7 @@ main {
     transition: transform .3s cubic-bezier(0.76, 0, 0.24, 1);
 }
 
-.navbar-links li a:hover::before {
+.navbar-links li a:hover::before{
     transform-origin: 0% 50%;
     transform: scaleX(1);
     position: absolute;
