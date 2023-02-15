@@ -1,70 +1,5 @@
 const router = require('express').Router();
 const { Product } = require('../../models');
-<<<<<<< HEAD
-const multer  = require('multer')
-const path = require('path')
-//const upload = multer({ dest: '../../uploads' })
-//test
-// const storage = multer.diskStorage({
-//     destination: function (req, file, cb) {
-//       cb(null, './uploads')
-//     },
-//     filename: function (req, file, cb) {
-//       cb(null, file.originalname)
-//     }
-//   })
-
-// const upload = multer({ storage: storage })
-
-//second test
-const storage = multer.diskStorage({
-    destination: (req, file, cb) => {
-        cb(null, 'uploads')
-    },
-    filename: (req, file, cb) => {
-        console.log('TEST FILE:', file)
-        // cb(null, Date.now() + path.extname(file.originalname))
-        cb(null, Date.now() + path.extname(file.originalname))
-
-    }
-})
-
-const upload = multer({ storage: storage})
-
-router.post('/', upload.single('image'), async (req, res) => {
-//router.post('/', upload.any(), async (req, res) => {
-try {
-    console.log('REQBODY-----',req.body);
-    console.log('PATH----', req.file.path)
-    console.log('REQFILE-----',req.file.path);
-    //console.log(req.file.filename)
-    //res.send('image uploaded')
-    //res.end()
-    //new along with async before (req,res)/ route was just 'img'
-    const productInfo = await Product.create({
-        ...req.body,
-        user_id: req.session.user_test,
-        path: req.file.path
-
-    })
-    console.log(productInfo)
-    //window.location.replace('/addproduct')
-    res.status(200).json(productInfo)
-    //res.send('posted!')
-} catch (err) {
-    res.status(404).json(err)
-}
-})
-
-router.get('/', (req, res) => {
-    try {
-       document.location.replace('/')
-    } catch (err) {
-        res.status(404).json(err)
-    }
-    })
-
-=======
 const path = require('path')
 const multer  = require('multer')
 const storage = multer.diskStorage({ 
@@ -76,7 +11,6 @@ const storage = multer.diskStorage({
     } 
 })
 const upload = multer({storage: storage})
->>>>>>> fa09666b8f5398e710742e57eabaa8d5bff49bff
 
 //keep
 // const withAuth = require('../../utils/auth')
@@ -104,14 +38,6 @@ const upload = multer({storage: storage})
 // })
 
 const withAuth = require('../../utils/auth')
-<<<<<<< HEAD
-router.post('/img', upload.single('imgfile'), async (req, res) => {
-    try{
-        // console.log(req.body)
-        // console.log(req.file.path)
-        // console.log(req.session.user_id)
-        //console.log('4', JSON.stringify(req.file))
-=======
 router.post('/upload', upload.single('image'), async (req, res) => {
     try{
 
@@ -121,7 +47,6 @@ router.post('/upload', upload.single('image'), async (req, res) => {
         console.log(file)
         console.log(fb)
         console.log(req.session.user_id)
->>>>>>> fa09666b8f5398e710742e57eabaa8d5bff49bff
         const productInfo = await Product.create({
             ...req.body,
             user_id: req.session.user_test,
