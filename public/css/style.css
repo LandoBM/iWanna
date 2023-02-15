@@ -38,10 +38,10 @@ body{
     position: relative;
 }
 
-.form-input {
+/* .form-input {
     width: 50%;
     height: 25%;
-}
+} */
 
 /* changes end here  */
 
@@ -135,6 +135,17 @@ a:focus::after {
     transform: translate3d(0, 0, 0);
     position: absolute;
 }
+
+/* #prodName,
+#prodCond,
+#prodPrice {
+
+} */
+
+/* input[type="text"] {
+    width: 85%;
+    height: 100%;
+} */
 
 /*BUTTONS*/
 #upBtn {
