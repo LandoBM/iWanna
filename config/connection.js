@@ -1,12 +1,9 @@
-require('dotenv').config()
-const Sequelize =  require('sequelize')
+require("dotenv").config();
+const Sequelize = require("sequelize");
 
 
-const sequelize = new Sequelize (
-    process.env.MYSQL_URI,
-    {
-        dialect:"mysql"
-    }
-)
+const sequelize = new Sequelize(process.env.JAWSDB_URI, {
+  dialect: "mysql",
+});
 
-module.exports = sequelize
+module.exports = sequelize;
