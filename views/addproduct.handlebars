@@ -36,7 +36,9 @@
 
 <div>
 <h1>Add New Product:</h1>
-<form class="new-prod" action="/api/product" enctype="multipart/form-data" method="post" id="addimg">
+<form target="dummyframe" class="new-prod" 
+action="/api/product" 
+enctype="multipart/form-data" method="post" id="addimg">
 <div class"form-group">
 <label for="prodName">item name:</label>
 <input class="form-input" type="text" id="prodName" name="product_name" />
@@ -54,6 +56,7 @@
 
      {{!-- <form action="/api/product/img" enctype="multipart/form-data" method="post" id="addimg"> --}}
      <div class="">
+      <iframe name="dummyframe" id="dummyframe" style="display: none;"></iframe>
       <label for="testimg">Upload Item Image</label>
       <input type="file" class="form-control-file" name="image" id="prodimg"> 
       {{!-- <input type="submit" value="Upload" />
