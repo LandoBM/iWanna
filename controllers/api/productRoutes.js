@@ -47,16 +47,17 @@ try {
 
     })
     console.log(productInfo)
+    //window.location.replace('/addproduct')
     res.status(200).json(productInfo)
-    //res.send(req.file.path)
+    //res.send('posted!')
 } catch (err) {
     res.status(404).json(err)
 }
 })
 
-router.get('/img', (req, res) => {
+router.get('/', (req, res) => {
     try {
-        res.send('image uploaded')
+       document.location.replace('/')
     } catch (err) {
         res.status(404).json(err)
     }

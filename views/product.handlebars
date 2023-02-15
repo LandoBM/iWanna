@@ -27,14 +27,8 @@
     {{/each}}
     </h2>
     </div>
-    {{!-- <h3>By: {{user.email}}</h3> --}}
-{{!-- <div class="update-prod"><a href="/editproduct/{{product_id}}"><button class="btn btn-sm btn-danger" data-id="{{product_id}}">UPDATE</button></a></div> --}}
-{{!-- <div class="edit-comment"><a href="/editcomment/{{id}}"><button class="btn btn-sm btn-danger" data-id="{{id}}">EDIT COMMENT</button></a></div> --}}
-
-{{!-- <div class=""><a href="/editproduct/{{product_id}}"><button class="btn btn-sm btn-danger" data-id="{{product_id}}">ADD COMMENT</button></a></div> --}}
-{{!-- <form class="addCom"><input class="addcom" type="text"><button id="addcom" data-id="{{comment_id}}">Add comment</button></form> --}}
-
-<form class="addCom"><textarea id="addcom"></textarea><button id="addcom" data-id="{{product_id}}">Add comment</button></form>
+    
+<form class="addCom"><textarea id="addcom"></textarea><button class="btn" data-id="{{product_id}}">Add comment</button></form>
 
 
 <div class=""><a href="/editproduct/{{product_id}}"><button class="btn btn-sm btn-danger" data-id="{{product_id}}">UPDATE POST</button></a></div>

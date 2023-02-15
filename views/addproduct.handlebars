@@ -1,11 +1,12 @@
-
+<div class="addproduct">
 <div class="delete-prod">
 <h1>Hi, {{name}}</h1>
+<h1>Users Current Listed Items</h1>
 {{#if products.length}}
 {{#each products}}
-<h1>Users Current Listed Items</h1>
+{{!-- <h1>Users Current Listed Items</h1> --}}
 {{!-- <h2>{{product_name}}</h2> --}}
-<h2><a href="/product/{{product_id}}">{{product_name}}</a></h2>
+<h2><a class="links" href="/product/{{product_id}}">{{product_name}}</a></h2>
  <button class="btn btn-sm btn-danger delete-prod" data-id="{{product_id}}">DELETE</button>
 {{/each}}
 
@@ -66,7 +67,7 @@
 
 </form>
 </div>
-
+</div>
 {{!-- <form action="/api/product/img" enctype="multipart/form-data" method="post" id="addimg">
      <div class="">
       <label for="testimg">Upload Item Image</label>
