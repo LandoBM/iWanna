@@ -21,7 +21,7 @@
         <div class="page-container">
             <header>
             <img class="logo" src="/images/iWannaedit.jpeg" width="150" height="150" alt="iWanna Logo">
-            <nav class="sidenav">
+            <nav>
 
                 <ul class="navbar-links">
                     {{#if logged_in}}
@@ -44,9 +44,8 @@
             </nav>
             </header>
         </div>
-        <div class="container headerImg" id="imgShadows">
-              <img src="/uploads/header.png" class="rounded img-fluid" alt="..." width="100%" height="50%">
-        </div>
+        <div class="container headerImg" id="iwanna-header" style="height: 60%; width:100%"></div>
+        
         <main class="container text-center">
             <div class="row align-items-start">
                 <div class="col">
@@ -93,14 +92,3 @@
 </html>
 
 
-{{!-- <nav>
-    {{#if logged_in}}
-    <a href="/">Home</a>
-    <a href="/product">View All Products</a>
-    <button class="no-button" id="logout">logout</button>
-    {{else}}
-    <a href="/login">Login</a>
-    <a href="/">Home</a>
-    <a href="/product">View All Products</a>
-    {{/if}}
-</nav> --}}

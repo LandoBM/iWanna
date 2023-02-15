@@ -66,21 +66,39 @@ main {
     left: 0;
     cursor: pointer;
     border-radius: 50%;
-    box-shadow: 0 10px 14px 0 rgba(0, 0, 0, 0.24), 0 17px 50px 0 rgba(0, 0, 0, 0.19);
+    box-shadow: 0 8px 12px 0 white, 0 14px 45px 0 white;
 }
 
 .headerImg {
-   margin: 50;
+   background-image: url(/uploads/header.png);
+   background-repeat: no-repeat;
+   background-position: center;
+   box-shadow: 0 0 10px 10px rgb(235, 254, 235) inset;
+   border-radius: 1%;
+}
+#iwanna-header{
+    object-fit: contain;
+    margin: 50;
+    box-shadow: 0 0 10px 10px white inset;
 }
 
 #imgShadows {
-    box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24), 0 17px 50px 0 rgba(0, 0, 0, 0.19);
-}
+    margin: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 5px;
+  }
+  
+  #imgShadows:hover {
+    box-shadow: 0 0 2px 1px darkolivegreen;
+  }
+  
 
 /*NAVBAR*/
 .navbar-links,
 .footer-links, #logout {
     list-style: none;
+    text-decoration: none;
 }
 
 .navbar-links li,
