@@ -48,7 +48,7 @@ body{
 .page-container {
     background-color: rgb(235, 254, 235);
     font-family: 'Raleway', sans-serif;
-    min-height: 100%;
+    
 } 
 main {
     padding-bottom: 2.5rem;
@@ -66,6 +66,14 @@ main {
     left: 0;
     cursor: pointer;
     border-radius: 50%;
+    box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24), 0 17px 50px 0 rgba(0, 0, 0, 0.19);
+}
+
+.headerImg {
+   margin: 50;
+}
+
+#imgShadows {
     box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24), 0 17px 50px 0 rgba(0, 0, 0, 0.19);
 }
 
@@ -218,3 +226,12 @@ a:focus::after {
 #login-container, #up-container{
     padding: 20px;
 }
+
+/* .form-group{
+    padding: 4px;
+    width: 210px; 
+    text-align: right;
+} */
+#login-head, #up-head {
+    padding: 10px;
+} 

@@ -5,20 +5,9 @@
       },
       "development": {
         "username": "root",
-        "password": "Riceball11!",
+        "password": "@babybaby124",
         "database": "project_db",
         "host": "localhost",
         "dialect": "mysql"
     }
 }
-
-
-
-
-
-
-
-
-
-
-
