@@ -1,0 +1,24 @@
+{
+    "production": {
+        "use_env_variable": "JAWSDB_URL",
+        "dialect": "mysql"
+      },
+      "development": {
+        "username": "root",
+        "password": "Chacha0416!",
+        "database": "project_db",
+        "host": "localhost",
+        "dialect": "mysql"
+    }
+}
+
+
+
+
+
+
+
+
+
+
+

@@ -2,9 +2,49 @@
     margin: 0;
     padding: 0;
 }
+
+/* changes start here */
+
 body{
     height: 100%;
+    background-color: rgb(235 254 235);
+    font-family: 'Raleway', sans-serif;
+    padding: 5%;
+    text-decoration: none;
 }
+
+.btn {
+    font-family: 'Raleway', sans-serif;
+    background-color: white;
+    color: black;
+    border: 2px solid #AACB73; 
+    transition-duration: 0.4s;
+    padding: 12px 28px;
+    border-radius: 12px;
+}
+
+.btn:hover {
+    background-color: #AACB73;
+  color: white;
+}
+
+.links {
+    text-decoration:underline #AACB73;
+    color: darkolivegreen;
+    margin-bottom: 20px;
+}
+
+.addproduct {
+    position: relative;
+}
+
+.form-input {
+    width: 50%;
+    height: 25%;
+}
+
+/* changes end here  */
+
 .page-container {
     background-color: rgb(235, 254, 235);
     font-family: 'Raleway', sans-serif;
@@ -94,6 +134,7 @@ a:focus::after {
     border-radius: 50%;
     cursor: pointer;
     text-decoration: none;
+    transition: all 0.3 ease 0s;
     color: darkolivegreen;
     border: 1.1px solid darkolivegreen;
 }
@@ -101,6 +142,7 @@ a:focus::after {
 /*FOOTER*/
  .footer-container{
     background-color:  rgb(235, 254, 235);
+    padding: 10%;
  }
 .footer {
     display: flex;

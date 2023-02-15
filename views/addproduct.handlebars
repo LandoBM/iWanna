@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <div class="addprod-container">
   <div class="delete-prod">
   <h1>Hi, {{name}}</h1>
@@ -6,6 +7,17 @@
   <h1>Users Current Listed Items</h1>
   {{!-- <h2>{{product_name}}</h2> --}}
   <h2><a href="/product/{{product_id}}">{{product_name}}</a></h2>
+=======
+<div class="addproduct">
+<div class="delete-prod">
+<h1>Hi, {{name}}</h1>
+<h1>Users Current Listed Items</h1>
+{{#if products.length}}
+{{#each products}}
+{{!-- <h1>Users Current Listed Items</h1> --}}
+{{!-- <h2>{{product_name}}</h2> --}}
+<h2><a class="links" href="/product/{{product_id}}">{{product_name}}</a></h2>
+>>>>>>> f18f8149b70b81721a951a7f3caddf40678f4231
  <button class="btn btn-sm btn-danger delete-prod" data-id="{{product_id}}">DELETE</button>
   {{/each}}
 
@@ -14,6 +26,7 @@
   {{/if}}
   </div>
 
+<<<<<<< HEAD
   <div>
   <h1>Add New Product:</h1>
   <form class="new-prod">
@@ -21,6 +34,15 @@
     <label for="prodName">item name:</label>
     <input class="form-input" type="text" id="prodName" name="prodName" />
     </div>
+=======
+{{!-- <div>
+<h1>Add New Product:</h1>
+<form class="new-prod">
+<div class"form-group">
+<label for="prodName">item name:</label>
+<input class="form-input" type="text" id="prodName" name="prodName" />
+</div>
+>>>>>>> f18f8149b70b81721a951a7f3caddf40678f4231
 
     <div class="form-group">
         <label for="prodCond">condition:</label>
@@ -30,7 +52,57 @@
         <button type="submit" data-id="{{id}}" class="btn btn-primary">Add</button>
       </div>
 
+<<<<<<< HEAD
   </form>
 </div>
 
+=======
+</form>
+</div> --}}
+
+<div>
+<h1>Add New Product:</h1>
+<form class="new-prod" action="/api/product" enctype="multipart/form-data" method="post" id="addimg">
+<div class"form-group">
+<label for="prodName">item name:</label>
+<input class="form-input" type="text" id="prodName" name="product_name" />
+</div>
+
+<div class="form-group">
+        <label for="prodCond">condition:</label>
+        <textarea class="form-input" type="text" id="prodCond" name="condition"></textarea>
+      </div>
+
+      <div class="form-group">
+        <label for="prodPrice">price:</label>
+        <textarea class="form-input" type="text" id="prodPrice" name="price"></textarea>
+      </div>
+
+     {{!-- <form action="/api/product/img" enctype="multipart/form-data" method="post" id="addimg"> --}}
+     <div class="">
+      <label for="testimg">Upload Item Image</label>
+      <input type="file" class="form-control-file" name="image" id="prodimg"> 
+      {{!-- <input type="submit" value="Upload" />
+      <input type="submit"/> --}}
+     </div>
+     {{!-- </form> --}}
+
+      <div class="form-group">
+        <button type="submit" data-id="{{id}}" class="btn btn-primary">Add</button>
+      </div>
+
+</form>
+</div>
+</div>
+{{!-- <form action="/api/product/img" enctype="multipart/form-data" method="post" id="addimg">
+     <div class="">
+      <label for="testimg">Upload Item Image</label>
+      <input type="file" class="form-control-file" name="imgfile" id="prodimg">
+      <input type="submit"/>
+     </div>
+     </form> --}}
+
+
+
+>>>>>>> f18f8149b70b81721a951a7f3caddf40678f4231
 <script src="./js/product.js"></script>

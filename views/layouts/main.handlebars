@@ -6,16 +6,30 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>iWanna</title>
+<<<<<<< HEAD
     <link rel="stylesheet" href="/css/style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
+=======
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+>>>>>>> f18f8149b70b81721a951a7f3caddf40678f4231
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,300;0,400;0,500;0,700;1,400&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<<<<<<< HEAD
 </head>
 
 <body>
     <div class="page-container">
+=======
+
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+    {{!-- <div>
+>>>>>>> f18f8149b70b81721a951a7f3caddf40678f4231
         <header>
             <img class="logo" src="/images/iWannaedit.jpg" width="100" height="100" alt="iWanna Logo">
             <nav class="sidenav">
@@ -29,13 +43,45 @@
                 </ul>
 
             </nav>
+<<<<<<< HEAD
 
         </header>
+=======
+        </header> --}}
+
+        <div class="page-container">
+        <header>
+            <img class="logo" src="/images/iWannaedit.jpeg" width="100" height="100" alt="iWanna Logo">
+            <nav class="sidenav">
+
+                <ul class="navbar-links">
+                    {{#if logged_in}}
+                    {{!-- <button type="button" id="upBtn"><a href="/login" data-replace="Login">Sign Up!</a></button> --}}
+                    <li><a href="/" data-replace="Home">Home</a></li>
+                    {{!-- <li><a href="/login" data-replace="Login">Login</a></li> --}}
+                    {{!-- <li><a href="/product" data-replace="Products">Products</a></li> --}}
+                    <li><a href="/addproduct" data-replace="Your Listings">Your Listings</a></li>
+                    <li><a href="#" data-replace="Cart">Cart</a></li>
+                     <button type="button" id="logout">logout</button>
+                     {{else}}
+                    <button type="button" id="upBtn"><a href="/login" data-replace="Login">Sign Up!</a></button>
+                    <li><a href="/login" data-replace="Login">Login</a></li>
+                    <li><a href="/" data-replace="Home">Home</a></li>
+                    <li><a href="/login" data-replace="Your Listings">Your Listings</a></li>
+                    {{/if}}
+                </ul>
+
+
+            </nav>
+
+            </div>
+>>>>>>> f18f8149b70b81721a951a7f3caddf40678f4231
 
         <main>
             {{{ body }}}
         </main>
 
+<<<<<<< HEAD
     </div>
      <footer class="footer-container">
             <div class="footer">
@@ -44,6 +90,19 @@
                     <li><a href="/">Home</a></li>
                     <li><a href="/login">Login</a></li>
                     <li><a href="#">Contact Us!</a></li>  
+=======
+        {{!-- <footer>
+
+        </footer> --}}
+
+         <footer class="footer-container">
+            <div class="footer">
+                <ul class="footer-links">
+                     <button type="button" id="upBtn"><a href="/login" data-replace="Login">Sign Up!</a></button>
+                    <li><a href="/" data-replace="Home">Home</a></li>
+                    <li><a href="/login" data-replace="Login">Login</a></li>
+                    <li><a href="#" data-replace="Contact Us!">Contact Us!</a></li>  
+>>>>>>> f18f8149b70b81721a951a7f3caddf40678f4231
                 </ul> 
                 <ul class="socials">
                     <li><a href="#"><i class="fa fa-facebook"></i></a></li>

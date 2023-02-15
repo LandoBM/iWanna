@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <body>
     <div class="main-container">
         <h1>Products:</h1>
@@ -20,3 +21,19 @@
 </body>
 
 </html>
+=======
+<h1>Items for Sale:</h1>
+{{#if logged_in}}
+{{#each products}}
+<div>
+    <h2><a class="links" href="/product/{{product_id}}">{{product_name}} - ${{price}}</a></h2>
+</div>
+{{/each}}
+{{else}}
+{{#each products}}
+<div>
+    <h2><a class="links" href="/login">{{product_name}}</a></h2>
+</div>
+{{/each}}
+{{/if}}
+>>>>>>> f18f8149b70b81721a951a7f3caddf40678f4231
