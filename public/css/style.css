@@ -220,6 +220,14 @@ a:focus::after, #logout:hover::after:focus{
 #login-container, #up-container{
     padding: 20px;
 }
+.form-group{
+    padding: 4px;
+    width: 210px; 
+    text-align: right;
+}
+#login-head, #up-head {
+    padding: 10px;
+} 
 
 /* ADD PRODUCTS PAGE */
 .addprod-container {
