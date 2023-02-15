@@ -13,11 +13,11 @@
         rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
-    <link rel="stylesheet" href="/public/css/style.css">
+    <link rel="stylesheet" href="/css/style.css">
 </head>
 
 <body>
-    <div>
+    {{!-- <div>
         <header>
             <h1>iWanna<h3>whatchu you want?</h3>
             </h1>
@@ -32,17 +32,63 @@
                 <a href="/login">My Items</a>
                 {{/if}}
             </nav>
-        </header>
+        </header> --}}
+
+        <div class="page-container">
+        <header>
+            <img class="logo" src="/images/iWannaedit.jpeg" width="100" height="100" alt="iWanna Logo">
+            <nav class="sidenav">
+
+                <ul class="navbar-links">
+                    {{#if logged_in}}
+                    {{!-- <button type="button" id="upBtn"><a href="/login" data-replace="Login">Sign Up!</a></button> --}}
+                    <li><a href="/" data-replace="Home">Home</a></li>
+                    {{!-- <li><a href="/login" data-replace="Login">Login</a></li> --}}
+                    {{!-- <li><a href="/product" data-replace="Products">Products</a></li> --}}
+                    <li><a href="/addproduct" data-replace="Your Listings">Your Listings</a></li>
+                    <li><a href="#" data-replace="Cart">Cart</a></li>
+                     <button type="button" id="logout">logout</button>
+                     {{else}}
+                    <button type="button" id="upBtn"><a href="/login" data-replace="Login">Sign Up!</a></button>
+                    <li><a href="/login" data-replace="Login">Login</a></li>
+                    <li><a href="/" data-replace="Home">Home</a></li>
+                    <li><a href="/login" data-replace="Your Listings">Your Listings</a></li>
+                    {{/if}}
+                </ul>
+
+
+            </nav>
+
+            </div>
 
         <main>
             {{{ body }}}
         </main>
 
-        <footer>
+        {{!-- <footer>
 
+        </footer> --}}
+
+         <footer class="footer-container">
+            <div class="footer">
+                <ul class="footer-links">
+                     <button type="button" id="upBtn"><a href="/login" data-replace="Login">Sign Up!</a></button>
+                    <li><a href="/" data-replace="Home">Home</a></li>
+                    <li><a href="/login" data-replace="Login">Login</a></li>
+                    <li><a href="#" data-replace="Contact Us!">Contact Us!</a></li>  
+                </ul> 
+                <ul class="socials">
+                    <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                    <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                    <li><a href="https://github.com/LandoBM/iWanna.git" target="_blank"><i class="fa fa-github"></i></a></li>
+                    <li><a href="#"><i class="fa fa-linkedin-square"></i></a></li>
+                    <li><a href="#"><i class="fa fa-instagram"></i></a></li>
+                </ul>
+                <div class="footer-copyright">
+                    <p>copyright &copy;2023</p>
+                </div>
+            </div>
         </footer>
-
-    </div>
 
     {{#if logged_in}}
     <script src="/js/logout.js"></script>
