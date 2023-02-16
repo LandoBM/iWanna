@@ -8,9 +8,9 @@
 <h2>codition: {{condition}}</h2>
 <h2>price: ${{price}}</h2>
 {{!-- {{#each product}} --}}
-<h2>IMG:</h2><img src="/{{path}}" alt="image">
+<h2>IMG:</h2><img src="/{{path}}" alt="image" width="300" height="200">
 {{!-- {{/each}} --}}
-<h2>TEST: {{image}}</h2>
+{{!-- <h2>TEST: {{image}}</h2> --}}
 {{!-- {{#each products}}
 <img src="{{image}}" alt="image">
 {{/each}} --}}
@@ -28,7 +28,14 @@
     </h2>
     </div>
     
-<form class="addCom"><textarea id="addcom"></textarea><button class="btn" data-id="{{product_id}}">Add comment</button></form>
+<form class="addCom">
+    {{!-- <textarea id="addcom"></textarea>
+    <button class="btn" data-id="{{product_id}}">Add comment</button> --}}
+    <div class="input-group mb-3">
+        <button class="btn btn-outline-secondary" id="button-addon1" data-id="{{product_id}}">Add comment</button>
+        <input type="text" class="form-control" placeholder="" aria-label="Example text with button addon" aria-describedby="button-addon1" id="addcom" height="55" width="100%">
+    </div>
+</form>
 
 
 <div class=""><a href="/editproduct/{{product_id}}"><button class="btn btn-sm btn-danger" data-id="{{product_id}}">UPDATE POST</button></a></div>
