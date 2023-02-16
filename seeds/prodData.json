@@ -3,18 +3,21 @@
         "product_name": "sofa",
         "condition": "Good",
         "user_id": 2,
-        "price": 25
+        "price": 25,
+        "path": "uploads/blueSofa.jpg"
     },
     {
         "product_name": "Titans Jersey",
         "condition": "Mint",
         "user_id": 1,
-        "price": 50
+        "price": 50,
+        "path": "uploads/titans.jpg"
     },
     {
         "product_name": "Xbox 360",
         "condition": "Poor",
         "user_id": 3,
-        "price": 30
+        "price": 30,
+        "path": "uploads/xbox.jpg"
     }
 ]

@@ -1,3 +1,4 @@
+
 <h1>Items for Sale:</h1>
 {{#if logged_in}}
 {{#each products}}
@@ -11,4 +12,18 @@
     <h2><a class="links" href="/login">{{product_name}}</a></h2>
 </div>
 {{/each}}
+<main class="container text-center">
+    <div class="row align-items-start">
+        <div class="col">
+            <img src="/pics/jersey.jpeg" class="rounded mx-auto d-block" alt="jersey" width="35%" height="40%" id="imgShadows">
+            <img src="/pics/dog-img.jpeg" class="rounded float-start" alt="dog" id="imgShadows" width="325px" height="200px">
+            <img src="/pics/shoes.jpeg" class="rounded float-end" alt="shoes" id="imgShadows" width="325px" height="250px">  
+        </div>
+        <div class="col">
+            <img src="/pics/car.jpeg" class="rounded mx-auto d-block" alt="homepage" width="325px" height="200px"  id="imgShadows">
+            <img src="/pics/computer.jpeg" class="rounded float-start" alt="computer" id="imgShadows">
+            <img src="/pics/ps5.jpeg" class="rounded float-end" alt="ps5" id="imgShadows" height="250px">                  
+        </div>
+    </div>
+</main>
 {{/if}}

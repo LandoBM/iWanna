@@ -1,7 +1,13 @@
-// const newFormHandler = async (event) => {
-//     event.preventDefault()
-//             document.location.replace('/')
-//     }
+const newFormHandler = async (event) => {
+    setTimeout(function () {
+        event.preventDefault()
+    console.log('TEST')
+            document.location.replace('/')
+    }, 5000)
+    // event.preventDefault()
+    // console.log('TEST')
+    //         document.location.replace('/')
+    }
 
 
 
@@ -44,8 +50,8 @@ const delBtnHandler = async (event) => {
 document.querySelector('.delete-prod')
     .addEventListener('click', delBtnHandler)
 
-// document.querySelector('.new-prod')
-//     .addEventListener('submit', newFormHandler)
+document.querySelector('.new-prod')
+    .addEventListener('submit', newFormHandler)
 
 // document.querySelector('#addimg')
 //    .addEventListener('submit', addimg)
