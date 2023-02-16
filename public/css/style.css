@@ -48,7 +48,6 @@ body{
 .page-container {
     background-color: rgb(235, 254, 235);
     font-family: 'Raleway', sans-serif;
-    
 } 
 main {
     padding-bottom: 2.5rem;
@@ -67,6 +66,39 @@ main {
     cursor: pointer;
     border-radius: 20%;
     box-shadow: 0 8px 12px 0 white, 0 14px 45px 0 white;
+}
+
+
+.headerImg {
+    background-image: url(/uploads/header.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    box-shadow: 0 0 10px 10px rgb(235, 254, 235) inset;
+    border-radius: 1%;
+ }
+ #iwanna-header{
+     object-fit: contain;
+     margin: 50;
+     box-shadow: 0 0 10px 10px white inset;
+}
+ 
+#imgShadows {
+     margin: 10px;
+     border: 1px solid #ddd;
+     border-radius: 4px;
+     padding: 5px;
+}
+   
+#imgShadows:hover {
+     box-shadow: 0 0 2px 1px darkolivegreen;
+}
+
+.headerImg {
+   margin: 50;
+}
+
+#imgShadows {
+    box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24), 0 17px 50px 0 rgba(0, 0, 0, 0.19);
 }
 
 .headerImg {
@@ -157,7 +189,6 @@ a:focus::after, #logout:hover::after:focus{
 /* #prodName,
 #prodCond,
 #prodPrice {
-
 } */
 
 /* input[type="text"] {
@@ -166,7 +197,7 @@ a:focus::after, #logout:hover::after:focus{
 } */
 
 /*BUTTONS*/
-#upBtn, #addprod-btn, #updateprod-btn, #delcom, #button-addon1 {
+#upBtn, #addprod-btn, #updateprod-btn, #button-addon1 {
     padding: 8px 8px;
     border-radius: 10%;
     cursor: pointer;
@@ -280,5 +311,5 @@ a:focus::after, #logout:hover::after:focus{
    justify-content: center;
 }
 .delete-prod, .new-prod {
-    padding: 20px; 
+    padding: 20px;
 }

@@ -4,13 +4,15 @@
 {{!-- {{#each product}} --}}
 <div>
 <h2>{{product_name}}</h2>
-<h2>added by: {{user.name}} on {{date}}</h2>
-<h2>codition: {{condition}}</h2>
-<h2>price: ${{price}}</h2>
+<h2>Added by: {{user.name}} on {{date}}</h2>
+<h2>Condition: {{condition}}</h2>
+<h2>Price: ${{price}}</h2>
 {{!-- {{#each product}} --}}
-<h2>IMG:</h2><img src="/{{path}}" alt="image" width="300" height="200">
+
+<img src="/{{path}}" alt="image" width="300" height="200" >
+
 {{!-- {{/each}} --}}
-<h2>TEST: {{image}}</h2>
+{{!-- <h2>TEST: {{image}}</h2> --}}
 {{!-- {{#each products}}
 <img src="{{image}}" alt="image">
 {{/each}} --}}
@@ -22,7 +24,7 @@
        comment: {{comment}}
     </p>  
     {{!-- <div class="delcom"> --}}
-        <button class="btn btn-sm btn-danger" id="delcom" data-id="{{comment_id}}">DELETE COMMENT</button>
+        <button class="btn btn-sm btn-danger" id="delcom" data-id="{{comment_id}}" id="" >DELETE COMMENT</button>
     {{!-- </div> --}}
     {{/each}}
     </h2>

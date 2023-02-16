@@ -1,7 +1,10 @@
 <h1>Update Item</h1>
 <form class="updateComments" data-id="{{product.product_id}}">
-<textarea class="p-name" placeholder="{{product.product_name}}"></textarea>
-<textarea class="p-cond" placeholder="{{product.condition}}"></textarea>
+<div class="input-group">
+  <span class="input-group-text">Name and Condition:</span>
+  <input type="text" placeholder="{{product.product_name}}" class="form-control p-name">
+  <input type="text" placeholder="{{product.condition}}"class="form-control p-cond">
+</div>
 <button data-id="{{product.product_id}}" type="submit" class="btn btn-primary update-prod" id="updateprod-btn">Publish</button>
 </form>
 <script src="/js/updateprod.js"></script>
