@@ -39,24 +39,32 @@
 <form target="dummyframe" class="new-prod" 
 action="/api/product" 
 enctype="multipart/form-data" method="post" id="addimg">
-  <div class="mb-3 row">
+
+<div class="mb-3 row">
+
     <label for="prodName" class="col-sm-2 col-form-label">Item Name:</label>
     <div class="col-sm-10">
       <input type="text" class="form-control form-input" id="prodName" name="product_name" > 
     </div>
   </div>
-  <div class="mb-3 row">
+
+ <div class="mb-3 row">
+
     <label for="prodCond" class="col-sm-2 col-form-label">Condition:</label>
     <div class="col-sm-10">
       <input type="text" class="form-control form-input" id="prodCond" name="condition" >
     </div>
   </div>
-  <div class="mb-3 row">
+
+
+ <div class="mb-3 row">
+
     <label for="prodPrice" class="col-sm-2 col-form-label">Price:</label>
     <div class="col-sm-10">
       <input type="text" class="form-control form-input" id="prodPrice" name="price" >
     </div>
   </div>
+
   <div class="mb-3">
     <iframe name="dummyframe" id="dummyframe" style="display: none;"></iframe>
     <label for="testimg" class="form-label" id="addprod-btn">Upload Image:</label>
@@ -65,16 +73,12 @@ enctype="multipart/form-data" method="post" id="addimg">
   <div class="form-group">
     <button type="submit" data-id="{{id}}" class="btn btn-primary" id="addprod-btn">Add</button>
   </div>
+
+
 </form>
 </div>
 </div>
-{{!-- <form action="/api/product/img" enctype="multipart/form-data" method="post" id="addimg">
-     <div class="">
-      <label for="testimg">Upload Item Image</label>
-      <input type="file" class="form-control-file" name="imgfile" id="prodimg">
-      <input type="submit"/>
-     </div>
-     </form> --}}
+
 
 
 
