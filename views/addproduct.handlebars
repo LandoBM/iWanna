@@ -7,7 +7,7 @@
 {{!-- <h1>Users Current Listed Items</h1> --}}
 {{!-- <h2>{{product_name}}</h2> --}}
 <h2><a class="links" href="/product/{{product_id}}">{{product_name}}</a></h2>
- <button class="btn btn-sm btn-danger delete-prod" data-id="{{product_id}}">DELETE</button>
+ <button class="btn btn-sm btn-danger delete-prod" data-id="{{product_id}}" id="addprod-btn">DELETE</button>
   {{/each}}
 
   {{else}}
@@ -56,11 +56,11 @@
     </div>
   </div>
   <div class="mb-3">
-    <label for="testimg" class="form-label">Upload Image:</label>
+    <label for="testimg" class="form-label" id="addprod-btn">Upload Image:</label>
     <input class="form-control-file" type="file" id="prodimg" name="image">
   </div>
   <div class="form-group">
-    <button type="submit" data-id="{{id}}" class="btn btn-primary">Add</button>
+    <button type="submit" data-id="{{id}}" class="btn btn-primary" id="addprod-btn">Add</button>
   </div>
 </form>
 </div>
