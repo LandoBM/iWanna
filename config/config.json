@@ -5,7 +5,7 @@
       },
       "development": {
         "username": "root",
-        "password": "@babybaby124",
+        "password": "@codewithlandon",
         "database": "project_db",
         "host": "localhost",
         "dialect": "mysql"
