@@ -3,7 +3,7 @@ const newFormHandler = async (event) => {
         event.preventDefault()
     console.log('TEST')
             document.location.replace('/')
-    }, 3000)
+    }, 5000)
     // event.preventDefault()
     // console.log('TEST')
     //         document.location.replace('/')
