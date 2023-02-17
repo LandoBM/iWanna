@@ -12,7 +12,7 @@
         "condition": "Mint",
         "user_id": 1,
         "price": 50,
-        "path": "uploads/titans.jpeg"
+        "path": "uploads/titans.jpg"
 
     },
     {
@@ -20,6 +20,6 @@
         "condition": "Poor",
         "user_id": 3,
         "price": 30,
-        "path": "uploads/xbox.jpeg"
+        "path": "uploads/xbox.jpg"
     }
 ]
