@@ -45,6 +45,10 @@ The user sign up to test the various features offered by the application.
 ## Questions
 
 For any questions please email me at landonbmurray@icloud.com
+
+## View
+The following image shows the web application's appearance and functionality:
+![The application displays a fully functioning site with login and sign up capabilities.](./Assets/images/password-generator.png)
 ## Links 
 
 https://iwanna.herokuapp.com/
