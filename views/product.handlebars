@@ -1,0 +1,48 @@
+<h1>Item number {{product_id}}</h1>
+
+{{#if logged_in}}
+{{!-- {{#each product}} --}}
+<div>
+<h2>{{product_name}}</h2>
+<h2>Added by: {{user.name}} on {{date}}</h2>
+<h2>Condition: {{condition}}</h2>
+<h2>Price: ${{price}}</h2>
+{{!-- {{#each product}} --}}
+
+<img src="/{{path}}" alt="image" width="300" height="200" >
+
+{{!-- {{/each}} --}}
+{{!-- <h2>TEST: {{image}}</h2> --}}
+{{!-- {{#each products}}
+<img src="{{image}}" alt="image">
+{{/each}} --}}
+
+<div id="delcom">
+<h2>
+    {{#each comments}}
+    <p>
+       comment: {{comment}}
+    </p>  
+    {{!-- <div class="delcom"> --}}
+        <button class="btn btn-sm btn-danger" id="delcom" data-id="{{comment_id}}" id="" >DELETE COMMENT</button>
+    {{!-- </div> --}}
+    {{/each}}
+    </h2>
+    </div>
+    
+<form class="addCom">
+    {{!-- <textarea id="addcom"></textarea>
+    <button class="btn" data-id="{{product_id}}">Add comment</button> --}}
+    <div class="input-group mb-3">
+        <button class="btn btn-outline-secondary" id="button-addon1" data-id="{{product_id}}">Add comment</button>
+        <input type="text" class="form-control" placeholder="" aria-label="Example text with button addon" aria-describedby="button-addon1" id="addcom" height="55" width="100%">
+    </div>
+</form>
+
+
+<div class=""><a href="/editproduct/{{product_id}}"><button class="btn btn-sm btn-danger" data-id="{{product_id}}">UPDATE POST</button></a></div>
+</div>
+{{!-- {{/each}} --}}
+{{/if}}
+
+<script src="/js/delcomment.js"></script>

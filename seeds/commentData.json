@@ -1,0 +1,17 @@
+[
+    {
+        "user_id": 1,
+        "product_id": 1,
+        "comment": "what are the mesurements?"
+    },
+    {
+        "user_id": 2,
+        "product_id": 1,
+        "comment": "would you take $50?"
+    },
+    {
+        "user_id": 1,
+        "product_id": 3,
+        "comment": "Does it come with controllers?"
+    }
+]
