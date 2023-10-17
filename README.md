@@ -32,11 +32,8 @@ This application uses GNU General Public License v3.0 license
 
 ## Contributing 
 
-Brian Yi - https://github.com/BrianYi311
 Landon Murray - https://github.com/LandoBM
-Savannah Parris - https://github.com/savannahparris
-Marcus Walker - https://github.com/mwalker35-stack
-Audrey Alcantara - https://github.com/Audrey-505
+
 
 ## Tests
 
